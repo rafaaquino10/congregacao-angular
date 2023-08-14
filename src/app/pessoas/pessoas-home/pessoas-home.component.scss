@@ -1,0 +1,32 @@
+.page-wrapper {
+  display: flex;
+}
+
+.content-wrapper {
+  flex-grow: 1;
+  padding: 20px; /* Ajuste conforme necessário */
+  background-color: #fff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  transition: margin-left 0.3s ease;
+  margin-top: 48px;
+  margin-left: 0; /* Inicialmente sem margem */
+}
+
+.app-side-nav-collapsed .content-wrapper {
+  margin-left: 0; /* O conteúdo ocupa o espaço da side-nav recolhida */
+  margin-top: 0;
+}
+
+.app-side-nav-collapsed:checked ~ .page-wrapper {
+  margin-left: 72px; /* Largura da side-nav expandida */
+}
+
+.layout {
+  /* Restante do estilo da layout (que envolve side-nav e content-wrapper) */
+  transition: margin-left 0.3s ease;
+}
+
+.app-side-nav {
+  /* Restante do estilo da side-nav */
+  min-width: 72px; /* Largura da side-nav recolhida */
+}

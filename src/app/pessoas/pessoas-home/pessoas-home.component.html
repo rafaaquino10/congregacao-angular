@@ -1,0 +1,35 @@
+<app-top-nav></app-top-nav>
+<div class="layout">
+   <app-side-nav [isCollapsed]="isSideNavCollapsed"></app-side-nav>
+    <div class="content-wrapper" [ngClass]="{ 'app-side-nav-collapsed': isSideNavCollapsed }">
+        <header class="page__header">
+            <h1 class="page__heading page__heading--title">Vila Yara - Osasco SP (4663)</h1>
+        </header>
+        <section class="margin-top-2">
+            <h2 class="page__heading page__heading--secondary">Dados</h2>
+            <div class="grid">
+                <div class="grid__item">
+                    <div class="data data--statistic data--statistic-card">
+                        <div class="data__pair">
+                            <dt class="data__label">
+                                <a class="data__link" href="#">Publicadores</a>
+                            </dt>
+                            <dd class="data__value">141</dd>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid__item">
+                    <div class="data data--statistic data--statistic-card">
+                        <div class="data__pair">
+                            <dt class="data__label">
+                                <a class="data__link" href="#">batizados</a>
+                            </dt>
+                            <dd class="data__value">129</dd>
+                        </div>
+                    </div>
+                </div>
+                <!-- Repita os blocos para cada estatística -->
+            </div>
+        </section>
+    </div>
+</div>
