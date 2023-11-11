@@ -1,36 +1,36 @@
-<div class="auth-container">
+<div class="login-container">
   <div class="auth-card">
-    <h2 class="auth-title">Congregação</h2>
-    <form (ngSubmit)="onSubmit()" class="login-form">
+    <div class="header">
+      <img src="../../assets/icons/login-icone.png" alt="Ícone do Sistema" class="system-icon">
+      <h2 class="auth-title">Congregação</h2>
+    </div>
+    <form class="login-form">
       <div class="form-group">
-        <label for="username">Usuário</label>
-        <input type="text" id="username" class="form-control" placeholder="Informe seu usuário">
+        <label class="text-align" for="username">Nome de usuário</label>
+        <input type="text" id="username" class="form-control" placeholder="">
       </div>
       <div class="form-group">
-        <label for="password">Senha</label>
-        <input type="password" id="password" class="form-control" placeholder="Informe sua senha">
+        <label text-align="left" for="password">Senha</label>
+        <input type="password" id="password" class="form-control" placeholder="">
       </div>
-      <button type="submit" class="btn btn-primary btn-block">Entrar</button>
+      <button routerLink="/home" type="submit" class="login-button">Fazer login</button>
     </form>
-    <a routerLink="/home">Ir para a Home</a>
   </div>
+  <footer class="login-layout__main-footer">
+    <p class="margin-bottom-05">Precisa de uma conta?</p>
+    <a class="button" href="/">Criar nova conta</a>
+  </footer>
 </div>
 
-<div id="g_id_onload"
-     data-client_id="945030082167-hsmodrgn43irmhje575det9dui6sle03.apps.googleusercontent.com"
-     data-context="use"
-     data-ux_mode="popup"
-     data-login_uri="http://localhost:4200/home"
-     data-auto_select="true"
-     data-itp_support="true">
+
+
+
+
+<div id="g_id_onload" data-client_id="945030082167-hsmodrgn43irmhje575det9dui6sle03.apps.googleusercontent.com"
+  data-context="use" data-ux_mode="popup" data-login_uri="http://localhost:4200/home" data-auto_select="true"
+  data-itp_support="true">
 </div>
 
-<div class="g_id_signin"
-     data-type="standard"
-     data-shape="rectangular"
-     data-theme="outline"
-     data-text="signin_with"
-     data-size="large"
-     data-locale="pt-BR"
-     data-logo_alignment="left">
+<div class="g_id_signin" data-type="standard" data-shape="rectangular" data-theme="outline" data-text="signin_with"
+  data-size="large" data-locale="pt-BR" data-logo_alignment="left">
 </div>

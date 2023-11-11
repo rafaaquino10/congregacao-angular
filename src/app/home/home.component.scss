@@ -1,6 +1,6 @@
 body {
-  font-family: Arial, sans-serif;
   margin: 0;
+  background-color: #f8f8f7;
 }
 
 .container {
@@ -12,37 +12,79 @@ body {
 .menu {
   display: flex;
   flex-wrap: wrap;
-  gap: 16px;
+  gap: 50px;
 }
 
 .menu-group {
-  flex: 1;
-  background-color: #f0f0f0;
+  width: 400px;
+  background-color: #ffffff;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e0e0e0;
+  -moz-box-shadow: 0 2px 2px -2px #d4d4d4;
+  -webkit-box-shadow: 0 2px 2px -2px #d4d4d4;
 }
 
-.menu-heading {
+.cabecalho-grupo {
+  display: flex;
+  justify-content: left;
   margin-top: 0;
-  font-size: 18px;
-  padding: 16px;
+  font-size: 1.0rem;
+  padding: 5px;
   background-color: #4b4a4a;
   color: #f0f0ef;
+}
+
+.titulo-menu {
+  text-align: center;
+  font-size: 1.7rem;
+  padding-top: 8px;
+  padding-left: 30px;
+  padding-bottom: 0px;
+}
+
+.icone {
+  width: 46px;
+  height: 49px;
+}
+
+.icone-reunioes {
+  width: 51px;
+  height: 51px;
+  padding-left: 5px;
+}
+
+.icone-relatorios {
+  width: 51px;
+  height: 45px;
+  padding-left: 5px;
+  padding-top: 5px;
+}
+
+.icone-territorios {
+  width: 46px;
+  height: 46px;
+  padding-top: 2px;
 }
 
 .menu-list {
   list-style: none;
   padding: 16px;
+  color: #2a4970;
 }
 
 .menu-list li {
-  padding: 10px 0;
+  padding: 10px 20px;
 }
 
 .menu-list a {
   text-decoration: none;
-  color: #333;
-  font-weight: bold;
+  color: #2a4970;
+  font-size: 1.2rem;
+}
+
+.menu-list a:hover   {
+  text-decoration: underline;
 }
 
 @media (max-width: 768px) {

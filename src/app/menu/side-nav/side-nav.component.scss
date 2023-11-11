@@ -1,161 +1,237 @@
-/* Estilos para a sidebar */
-.layout {
-  display: flex;
+.pagina_inicial {
+  padding: 10px 25px;
+  padding-bottom: 25px;
+  padding-top: 25px;
+  background-image: linear-gradient(to bottom, transparent 50%, #ccc 50%);
+  background-size: 100% 1px;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  content: none;
+}
+
+.pagina_inicial li::marker {
+  content: none;
+  text-decoration: none;
+  /* Remove a sublinhado dos links */
+  color: #2a4970;
+  /* Mantém a cor de texto padrão */
+  cursor: pointer;
+  /* Muda o cursor para indicar interatividade */
+}
+
+.icon {
+  font-size: 1.1em;
+  cursor: pointer;
+  /* Muda o cursor para indicar interatividade */
+  text-decoration: none;
+  /* Remove a sublinhado dos links */
+  cursor: pointer;
+  /* Muda o cursor para indicar interatividade */
+  color: #2a4970;
+}
+
+.icon:hover {
+  text-decoration: underline;
+  /* Remove a sublinhado dos links */
 }
 
 .side-nav {
-  transition: transform 0.3s ease; /* Adicione a transição de transform */
-  transform: translateX(0); /* Começa oculta */
-  min-width: 220px;
-  max-width: 220px;
+  min-width: 0px;
+  width: 220px;
   min-height: 100%;
-  background-color: rgb(240, 240, 239);
-  color: rgb(43, 42, 42);
+  -webkit-transition: min-width 0.3s ease, max-width 0.3s ease;
+  transition: min-width 0.3s ease, max-width 0.3s ease;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  padding: 0 0 0 0;
+  background-color: #f0f0ef;
+  color: #615d5c;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  padding: 20px;
-  position: fixed;
-  top: 48px; /* Leva em conta a altura da top-nav */
-  bottom: 0;
-  left: 0;
-  z-index: 999; /* Coloca acima do conteúdo */
+  padding-bottom: 1.5rem;
 }
 
-.side-nav__is-collapsed:checked ~ .side-nav {
-  transform: translateX(0); /* Mostra quando está marcado */
-}
-
-.side-nav__is-collapsed {
-  display: none;
-}
-
-.side-nav__toggle {
-  position: absolute;
-  top: 10px;
-  left: 10px;
+.side-nav__section {
+  padding: 10px 25px;
+  /* Ajuste o espaçamento conforme necessário */
+  background-image: linear-gradient(to top, transparent 50%, #ccc 50%),
+    linear-gradient(to bottom, transparent 50%, #ccc 50%);
+  background-size: 100% 1px;
+  background-repeat: no-repeat;
+  background-position: center bottom;
   cursor: pointer;
-  z-index: 1;
+  /* Muda o cursor para indicar interatividade */
 }
 
-.side-nav__toggle:before {
-  content: "☰";
-  font-size: 24px;
-}
-
-
-.side-nav__header-container {
-  margin: 0;
-  padding: 0;
+.side-nav__section:hover {
+  background-color: #e0e0dfc4;
+  color: #373433;
+  text-decoration: underline;
 }
 
 .side-nav__header {
-  font-size: 1.125rem;
-  margin-bottom: 0.25rem;
-}
-
-.side-nav__header-link {
-  color: var(--anchor-text);
+  padding-left: 10px;
   text-decoration: none;
-  transition: color 0.2s ease;
-}
-
-.side-nav__header-link:hover {
-  color: var(--text-color);
-}
-
-.side-nav__sub-header {
-  font-size: 1rem;
-  margin-top: 0.5rem;
-  margin-bottom: 0.25rem;
-  font-weight: bold;
-  color: var(--legend-olor);
-}
-
-.side-nav__items {
-  list-style: none;
-  padding-left: 1rem;
-}
-
-.side-nav__item {
-  margin-bottom: 0.25rem;
+  /* Remove a sublinhado dos links */
+  color: inherit;
+  /* Mantém a cor de texto padrão */
+  cursor: pointer;
+  /* Muda o cursor para indicar interatividade */
 }
 
 .side-nav__link {
-  color: var(--text-color);
+  font-size: .9rem;
+  padding-left: 25px;
   text-decoration: none;
-  transition: color 0.2s ease;
+  color: #2a4970;
+  cursor: pointer;
+  /* Muda o cursor para indicar interatividade */
 }
 
-.side-nav__link:hover {
-  color: var(--anchor-text);
+
+.side-nav__item {
+  padding: 5px;
 }
 
-.side-nav__item--active .side-nav__link {
-  color: var(--anchor-text);
-  font-weight: bold;
+.side-nav__item:hover {
+  background-color: #e0e0dfc4;
+  color: #373433;
+  border-left: 5px #4171ae solid;
 }
 
-.side-nav__arrow {
-  border-bottom-color: var(--background-color);
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block;
 }
 
-.grid {
+
+nav {
+  display: block;
+}
+
+html,
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+q,
+small,
+strong,
+sub,
+sup,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+figure,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  -webkit-text-size-adjust: none;
+}
+
+h3 {
+  font-size: 1.2rem;
+  padding-left: 15px;
+  padding-bottom: 5px;
+  padding-top: 15px;
+}
+
+.layout {
+  display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  margin-right: -0.5rem;
-  margin-left: -0.5rem;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100vh;
 }
 
-.grid--cross-center {
-  -ms-flex-align: center;
-  align-items: center;
+*.dir-ltr {
+  direction: ltr;
 }
 
-.grid--no-bleed {
-  margin-right: 0;
-  margin-left: 0;
+body {
+  font-family: WTMannaSans, Arial, "Arial Unicode MS", sans-serif;
 }
 
-.grid__item {
-  -ms-flex-preferred-size: 0;
-  flex-basis: 0;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  max-width: 100%;
-  padding-right: 0.5rem;
-  padding-left: 0.5rem;
+body {
+  font-size: 0.875em;
+  color: #373433;
+  font-family: WTMannaSans, Arial, "Arial Unicode MS", sans-serif;
+  background-color: #e7e6e4;
+  line-height: 1.45;
+  min-height: 100%;
 }
 
-.text-normal {
-  font-weight: normal;
+body {
+  color: #373433;
+  background-color: #f8f8f7;
 }
 
-.padding-bottom-1 {
-  padding-bottom: 1rem;
+html {
+  font-size: 1em;
+  -webkit-text-size-adjust: 1em;
+  -ms-text-size-adjust: 1em;
+  height: 100%;
 }
 
-.text-normal {
-  font-weight: normal;
+html {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
 }
 
-.margin-right-05 {
-  margin-right: 0.3125rem;
+.expanded {
+  width: 0px;
 }
 
-@media (min-width: 992px) {
-  .side-nav {
-      padding-bottom: 1.5rem;
-  }
-
-}
-
-.side-nav__is-collapsed:checked ~ .side-nav {
-  transform: translateX(-100%);
-}
-
-/* Estilos para o conteúdo principal */
-.content {
-  flex-grow: 1;
-  padding: 20px;
+.side-content.expanded {
+  width: 250px;
 }

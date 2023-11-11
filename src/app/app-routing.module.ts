@@ -10,10 +10,10 @@ import { ListarPessoasComponent } from './pessoas/listar-pessoas/listar-pessoas.
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'home', component: HomeComponent },
-  { path: 'pessoasHome', component: PessoasHomeComponent},
-  { path: 'cadastrarPessoa', component: CadastrarPessoaComponent },
-  { path: 'editarPessoa', component: EditarPessoaComponent },
-  { path: 'listarPessoas', component: ListarPessoasComponent },
+  { path: 'pessoas-home', component: PessoasHomeComponent},
+  { path: 'cadastrar-pessoa', component: CadastrarPessoaComponent },
+  { path: 'editar-pessoa', component: EditarPessoaComponent },
+  { path: 'listar-pessoas', component: ListarPessoasComponent },
 ];
 
 @NgModule({

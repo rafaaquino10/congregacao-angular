@@ -9,8 +9,11 @@
   height: 48px;
   background-color: #3a3f85;
   color: #f0f0ef;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+}
+
+button {
+  background-color: #3a3f85;
+  color: #f0f0ef;
+  border: none;
+  font-size: 1.8em;
 }

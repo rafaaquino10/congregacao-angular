@@ -17,8 +17,4 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
   
-  onSubmit(){
-    console.log(`Username: ${this.username}, Password: ${this.password}`);
-    this.router.navigate(['/home']);
-  }
 }

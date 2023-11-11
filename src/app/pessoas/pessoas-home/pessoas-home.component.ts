@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MenuService } from '../../menu/menu.service';
 
 @Component({
   selector: 'app-pessoas-home',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./pessoas-home.component.scss']
 })
 export class PessoasHomeComponent {
-  isSideNavCollapsed: boolean = false;
+  constructor(public menuService: MenuService) {}
 }

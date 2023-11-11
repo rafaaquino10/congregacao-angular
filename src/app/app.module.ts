@@ -12,6 +12,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PessoasHomeComponent } from './pessoas/pessoas-home/pessoas-home.component';
 import { TopNavComponent } from './menu/top-nav/top-nav.component';
 import { SideNavComponent } from './menu/side-nav/side-nav.component';
+import { HomeTopNavComponent } from './menu/home-top-nav/home-top-nav.component';
+import { CardPessoaComponent } from './pessoas/listar-pessoas/card-pessoa/card-pessoa.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +24,9 @@ import { SideNavComponent } from './menu/side-nav/side-nav.component';
     EditarPessoaComponent,
     PessoasHomeComponent,
     TopNavComponent,
-    SideNavComponent
+    SideNavComponent,
+    HomeTopNavComponent,
+    CardPessoaComponent
   ],
   imports: [
     BrowserModule,

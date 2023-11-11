@@ -2,53 +2,65 @@
 <html lang="pt">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Navbar and Sidebar Example</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar and Sidebar Example</title>
 </head>
 
 <body>
-  <br><br><br>
-  <main class="content">
-    <div class="container">
-      <div class="menu">
-          <div class="menu-group">
-              <h2 class="menu-heading">PESSOAS</h2>
-              <ul class="menu-list">
-                  <li><a href="#">Pessoas da Congregação</a></li>
-                  <li><a href="#">Grupos de Saída de Campo</a></li>
-                  <li><a href="#">Informações da Congregação</a></li>
-                  <li><a href="#">Verificar Pendências</a></li>
-                  <li><a href="#">Exportar Dados</a></li>
-              </ul>
-          </div>
-          <div class="menu-group">
-              <h2 class="menu-heading">REUNIÕES</h2>
-              <ul class="menu-list">
-                  <li><a href="#">Programação das Reuniões</a></li>
-                  <li><a href="#">Designações de Privilégios</a></li>
-                  <li><a href="#">Designações Vida e Ministério</a></li>
-                  <li><a href="#">Assistência às Reuniões</a></li>
-              </ul>
-          </div>
-          <div class="menu-group">
-              <h2 class="menu-heading">PREGAÇÃO</h2>
-              <ul class="menu-list">
-                  <li><a href="#">Registrar Relatório</a></li>
-                  <li><a href="#">Análise das Atividades</a></li>
-              </ul>
-          </div>
-          <div class="menu-group">
-              <h2 class="menu-heading">TERRITÓRIOS</h2>
-              <ul class="menu-list">
-                  <li><a href="#">Lista de Mapas</a></li>
-                  <li><a href="#">Territórios Designados</a></li>
-                  <li><a href="#">Campanhas Especiais</a></li>
-              </ul>
-          </div>
-      </div>
-  </div>
-  </main>
+    <app-home-top-nav></app-home-top-nav>
+    <br><br><br>
+    <main class="content">
+        <div class="container">
+            <div class="menu">
+                <div class="menu-group">
+                    <div class="cabecalho-grupo"><img class="icone" src="../../assets/icons/pessoas-icone.png">
+                        <h2 class="titulo-menu">Pessoas</h2>
+                    </div>
+                    <ul class="menu-list">
+                        <li><a href="/pessoas-home">Pessoas da congregação</a></li>
+                        <li><a href="/cadastrar-pessoa">Registrar pessoa</a></li>
+                        <li><a href="#">Grupos</a></li>
+                        <li><a href="#">Verificar pendências</a></li>
+                        <li><a href="#">Exportar dados</a></li>
+                    </ul>
+                </div>
+                <div class="menu-group">
+                    <div class="cabecalho-grupo">
+                        <img class="icone-reunioes" src="../../assets/icons/reunioes-icone.png">
+                        <h2 class="titulo-menu">Reuniões</h2>
+                    </div>
+                    <ul class="menu-list">
+                        <li><a href="#">Programação</a></li>
+                        <li><a href="#">Designações de privilégios</a></li>
+                        <li><a href="#">Designações Vida e Ministério</a></li>
+                        <li><a href="#">Assistência</a></li>
+                    </ul>
+                </div>
+                <div class="menu-group">
+                    <div class="cabecalho-grupo">
+                        <img class="icone-relatorios" src="../../assets/icons/relatorios-icone.png">
+                        <h2 class="titulo-menu">Relatórios</h2>
+                    </div>
+                    <ul class="menu-list">
+                        <li><a href="#">Registrar relatório</a></li>
+                        <li><a href="#">Análise das Atividades</a></li>
+                    </ul>
+                </div>
+                <div class="menu-group">
+                    <div class="cabecalho-grupo">
+                        <img class="icone-territorios" src="../../assets/icons/territorios-icone.png">
+                        <h2 class="titulo-menu">Territórios</h2>
+                    </div>
+                    <ul class="menu-list">
+                        <li><a href="#">Lista de Mapas</a></li>
+                        <li><a href="#">Territórios Designados</a></li>
+                        <li><a href="#">Campanhas Especiais</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
 </body>
 
 </html>

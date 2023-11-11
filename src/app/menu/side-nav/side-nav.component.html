@@ -1,110 +1,27 @@
-<div class="layout">
-    <input type="checkbox" class="side-nav__is-collapsed" id="side-nav__is-collapsed" checked>
-    <label for="side-nav__is-collapsed" class="side-nav__toggle"></label>
-    <nav class="side-nav hide-for-print">
-        <div class="side-nav__arrow"></div>
-        <ul class="margin-0">
-            <li class="grid grid--no-bleed">
-                <a class="grid grid--cross-center grid--no-bleed grid__item padding-bottom-1 text-normal" href="#"> <img
-                        class="margin-right-05" src="../../../../../documentation/icon_jw-dashboard.svg" width="32"
-                        height="32">Página inicial</a>
-            </li>
-        </ul>
-        <section class="side-nav__section">
-            <header class="side-nav__header-container">
-                <h1 class="side-nav__header side-nav__header--has-link"><a class="side-nav__header-link"
-                        href="#">PESSOAS</a></h1>
-            </header>
-        </section>
-        <section class="side-nav__section">
-            <header class="side-nav__header-container">
-                <h1 class="side-nav__header side-nav__header--has-link"><a class="side-nav__header-link"
-                        href="#">REUNIÕES</a></h1>
-            </header>
-        </section>
-        <section class="side-nav__section">
-            <header class="side-nav__header-container">
-                <h1 class="side-nav__header side-nav__header--has-link"><a class="side-nav__header-link"
-                        href="#">ATIVIDADES</a></h1>
-            </header>
-        </section>
-        <section class="side-nav__section">
-            <header class="side-nav__header-container">
-                <h1 class="side-nav__header side-nav__header--has-link"><a class="side-nav__header-link"
-                        href="#">TERRITÓRIOS</a></h1>
-            </header>
-        </section>
-        <section class="side-nav__section">
-            <header class="side-nav__header-container">
-                <h1 class="side-nav__header side-nav__header--has-link"><a class="side-nav__header-link"
-                        href="#">PESSOAS</a></h1>
-            </header>
-        </section>
-        <section class="side-nav__section">
-            <header class="side-nav__header-container">
-                <h1 class="side-nav__header side-nav__header--has-link"><a class="side-nav__header-link"
-                        href="#">REUNIÕES</a></h1>
-            </header>
-        </section>
-        <section class="side-nav__section">
-            <header class="side-nav__header-container">
-                <h1 class="side-nav__header side-nav__header--has-link"><a class="side-nav__header-link"
-                        href="#">ATIVIDADES</a></h1>
-            </header>
-        </section>
-        <section class="side-nav__section">
-            <header class="side-nav__header-container">
-                <h1 class="side-nav__header side-nav__header--has-link"><a class="side-nav__header-link"
-                        href="#">TERRITÓRIOS</a></h1>
-            </header>
-        </section>
-        <section class="side-nav__section">
-            <header class="side-nav__header-container">
-                <h1 class="side-nav__header side-nav__header--has-link"><a class="side-nav__header-link"
-                        href="#">PESSOAS</a></h1>
-            </header>
-        </section>
-        <section class="side-nav__section">
-            <header class="side-nav__header-container">
-                <h1 class="side-nav__header side-nav__header--has-link"><a class="side-nav__header-link"
-                        href="#">REUNIÕES</a></h1>
-            </header>
-        </section>
-        <section class="side-nav__section">
-            <header class="side-nav__header-container">
-                <h1 class="side-nav__header side-nav__header--has-link"><a class="side-nav__header-link"
-                        href="#">ATIVIDADES</a></h1>
-            </header>
-        </section>
-        <section class="side-nav__section">
-            <header class="side-nav__header-container">
-                <h1 class="side-nav__header side-nav__header--has-link"><a class="side-nav__header-link"
-                        href="#">TERRITÓRIOS</a></h1>
-            </header>
-        </section>        <section class="side-nav__section">
-            <header class="side-nav__header-container">
-                <h1 class="side-nav__header side-nav__header--has-link"><a class="side-nav__header-link"
-                        href="#">PESSOAS</a></h1>
-            </header>
-        </section>
-        <section class="side-nav__section">
-            <header class="side-nav__header-container">
-                <h1 class="side-nav__header side-nav__header--has-link"><a class="side-nav__header-link"
-                        href="#">REUNIÕES</a></h1>
-            </header>
-        </section>
-        <section class="side-nav__section">
-            <header class="side-nav__header-container">
-                <h1 class="side-nav__header side-nav__header--has-link"><a class="side-nav__header-link"
-                        href="#">ATIVIDADES</a></h1>
-            </header>
-        </section>
-        <section class="side-nav__section">
-            <header class="side-nav__header-container">
-                <h1 class="side-nav__header side-nav__header--has-link"><a class="side-nav__header-link"
-                        href="#">TERRITÓRIOS</a></h1>
-            </header>
-        </section>
-        <!-- Adicione os outros itens da sidebar aqui -->
-    </nav>
+<div class="side-nav hide-for-print" [ngClass]="{'expanded': menuService.isSideNavExpanded$ | async}">
+   <ul class="pagina_inicial">
+      <li class="class" routerLink="/home">
+         <a class="icon" href="#"> <img class="margin-right-05" src="../../../assets/icons/icon_jw-dashboard.svg"
+               width="32" height="32">Página
+            inicial</a>
+      </li>
+   </ul>
+   <section class="side-nav">
+      <h3 id="pessoas" class="side-nav__section submenu" (click)="toggleSubMenu('pessoas')">PESSOAS</h3>
+      <ul class="side-nav__items" *ngIf="subMenus.pessoas">
+         <li class="side-nav__item"><a class="side-nav__link" href="#">Visão geral</a></li>
+         <li class="side-nav__item"><a class="side-nav__link" href="/listar-pessoas">Registro de pessoas</a></li>
+         <li class="side-nav__item"><a class="side-nav__link" href="/cadastrar-pessoa">Registrar e atualizar</a></li>
+         <li class="side-nav__item"><a class="side-nav__link" href="#">Importar registros</a></li>
+      </ul>
+      <h3 id="reunioes" class="side-nav__section submenu" (click)="toggleSubMenu('reunioes')">REUNIÕES</h3>
+      <ul class="side-nav__items" *ngIf="subMenus.reunioes">
+         <li class="side-nav__item"><a class="side-nav__link" href="#">Programação</a></li>
+         <li class="side-nav__item"><a class="side-nav__link" href="#">Designações</a></li>
+         <li class="side-nav__item"><a class="side-nav__link" href="#">Assistência</a></li>
+         <li class="side-nav__item"><a class="side-nav__link" href="#">Quadro de anúncios</a></li>
+      </ul>
+      <h3 id="territorios" class="side-nav__section submenu">TERRITÓRIOS</h3>
+      <h3 id="relatorios" class="side-nav__section submenu">RELATÓRIOS</h3>
+   </section>
 </div>
