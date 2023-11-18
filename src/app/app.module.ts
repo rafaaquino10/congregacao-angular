@@ -14,6 +14,9 @@ import { TopNavComponent } from './menu/top-nav/top-nav.component';
 import { SideNavComponent } from './menu/side-nav/side-nav.component';
 import { HomeTopNavComponent } from './menu/home-top-nav/home-top-nav.component';
 import { CardPessoaComponent } from './pessoas/listar-pessoas/card-pessoa/card-pessoa.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ConfirmacaoModalComponent } from './pessoas/confirmacao-modal/confirmacao-modal.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,13 +29,15 @@ import { CardPessoaComponent } from './pessoas/listar-pessoas/card-pessoa/card-p
     TopNavComponent,
     SideNavComponent,
     HomeTopNavComponent,
-    CardPessoaComponent
+    CardPessoaComponent,
+    ConfirmacaoModalComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule 
   ],
   providers: [],
   bootstrap: [AppComponent]

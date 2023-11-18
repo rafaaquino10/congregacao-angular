@@ -5,118 +5,164 @@
             <app-side-nav></app-side-nav>
         </div>
         <div class="main-content">
-            <form class="form">
-                <h3 class="categoria">Dados Pessoais</h3>
-                <hr class="category-line">
-                <div class="input-group">
-                    <div class="linha">
-                        <label class="field__label" for="txtNomeCompleto">Nome completo</label>
-                        <input type="text" id="txtNomeCompleto" name="txtNomeCompleto" class="field__input">
-                    </div>
+            <form class="form" #form="ngForm" (ngSubmit)="onSubmit(form)">
+            <h3 class="categoria">Dados Pessoais</h3>
+            <hr class="category-line">
+            <div class="input-group">
+                <div class="linha">
+                    <label class="field__label" for="txtNomeCompleto">Nome completo</label>
+                    <input type="text" id="txtNomeCompleto" name="nomeCompleto" class="field__input" ngModel>
                 </div>
-                    <div class="input-group">
-                    <div class="linha">
-                        <label class="field__label" for="txtNomeAbreviado">Nome abreviado</label>
-                        <input type="text" id="txtNomeAbreviado" name="txtNomeAbreviado" class="field__input">
-                    </div>
-                    <div class="linha">
-                        <label class="field__label" for="txtFamilia">Família</label>
-                        <input type="text" id="txtFamilia" name="txtFamilia" class="field__input" >
-                    </div>
-                    <div class="linha">
-                        <label class="field__label" for="gender">Gênero</label>
-                        <select id="gender" name="gender" class="field__input">
-                            <option value=""></option>
-                            <option value="Masculino">Masculino</option>
-                            <option value="Feminino">Feminino</option>
-                        </select>
-                    </div>
-                    <div class="linha">
-                        <label class="field__label" for="txtDataNascimento">Data de nascimento</label>
-                        <input type="date" id="txtDataNascimento" name="txtDataNascimento" class="field__input">
-                    </div>
+            </div>
+            <div class="input-group">
+                <div class="linha">
+                    <label class="field__label" for="txtNomeAbreviado">Nome abreviado</label>
+                    <input type="text" id="txtNomeAbreviado" name="nomeAbreviado" class="field__input" ngModel>
                 </div>
-                <h3 class="categoria">Espirituais</h3>
-                <hr class="category-line">
-                <div class="input-group">
-                    <div class="linha">
-                        <label class="field__label">Publicador</label>
-                        <select id="selPublicador" name="selPublicador" class="field__input">
-                            <option value=""></option>
-                            <option value="PublicadorNãoBatizado">Não batizado</option>
-                            <option value="PublicadorBatizado">Batizado</option>
-                        </select>
-                    </div>
-                    <div class="linha">
-                        <label class="field__label" for="txtDataBatismo">Data de batismo</label>
-                        <input type="date" id="txtDataBatismo" name="txtDataBatismo" class="field__input">
-                    </div>
-                    <div class="linha">
-                        <label class="field__label" for="selGrupo">Grupo</label>
-                        <select id="selGrupo" name="selGrupo" class="field__input">
-                            <option value=""></option>
-                            <option value="Brecheret">Brecheret</option>
-                            <option value="Campesina">Campesina</option>
-                            <option value="Filipini">Filipini</option>
-                            <option value="Guadalupe">Guadalupe</option>
-                            <option value="SalãoDoReino">Salão do reino</option>
-                            <option value="SantinaDaCosta">Santina da Costa</option>
-                            <option value="Umuarama">Umuarama</option>
-                            <option value="VilaYara">Vila Yara</option>
-                        </select>
-                    </div>
-                    <div class="linha">
-                        <label class="field__label" for="selPrivilegio">Privilégio</label>
-                        <select id="selPrivilegio" name="selPrivilegio" class="field__input">
-                            <option value=""></option>
-                            <option value="Anciao">Ancião</option>
-                            <option value="ServoMinisterial">Servo Ministerial</option>
-                        </select>
-                    </div>
-                    <div class="linha" style="padding-left:2%">
-                        <label class="field__label">Pioneiro?</label>
-                        <label class="field_label"><input type="radio" name="pioneiro" value="Auxiliar">
-                            Auxiliar</label>
-                        <label class="field_label"><input type="radio" name="pioneiro" value="Regular"> Regular</label>
-                        <label class="field_label"><input type="radio" name="pioneiro" value="Especial">
-                            Especial</label>
-                    </div>
+                <div class="linha">
+                    <label class="field__label" for="txtFamilia">Família</label>
+                    <input type="text" id="txtFamilia" name="nomeFamilia" class="field__input" ngModel>
                 </div>
-                <h3 class="categoria">Contato e Endereço</h3>
-                <hr class="category-line">
-                <div class="input-group">
-                    <div class="linha">
-                        <label class="field__label" for="txtTelefone">Telefone</label>
-                        <input type="tel" id="txtTelefone" name="txtTelefone" class="field__input">
-                    </div>
-                    <div class="linha">
-                        <label class="field__label" for="txtEmail">E-mail</label>
-                        <input type="email" id="txtEmail" name="txtEmail" class="field__input">
-                    </div>
-                    <div class="linha">
-                        <label class="field__label" for="txtEndereco">Endereço</label>
-                        <input type="text" id="txtEndereco" name="txtEndereco" class="field__input" size="50">
-                    </div>
+                <div class="linha">
+                    <label class="field__label" for="gender">Gênero</label>
+                    <select id="gender" name="genero" class="field__input" ngModel>
+                        <option value=""></option>
+                        <option value="Masculino">Masculino</option>
+                        <option value="Feminino">Feminino</option>
+                    </select>
                 </div>
-                <div class="input-group">
-                    <div class="linha">
-                        <label class="field__label" for="txtContatoEmergencia">Nome - Contato de emergência</label>
-                        <input type="text" id="txtContatoEmergencia" name="txtContatoEmergencia" class="field__input">
-                    </div>
-                    <div class="linha">
-                        <label class="field__label" for="txtContatoEmergencia">Parentesco - Contato de
-                            emergência</label>
-                        <input type="text" id="txtContatoEmergencia" name="txtContatoEmergencia" class="field__input">
-                    </div>
-                    <div class="linha">
-                        <label class="field__label" for="txtTelefoneEmergencia">Telefone - Contato de emergência</label>
-                        <input type="tel" id="txtTelefoneEmergencia" name="txtTelefoneEmergencia" class="field__input">
-                    </div>
+                <div class="linha">
+                    <label class="field__label" for="txtDataNascimento">Data de nascimento</label>
+                    <input type="date" id="txtDataNascimento" name="dataNascimento" class="field__input" ngModel>
                 </div>
+            </div>
 
-                <div class="frmBtns">
-                    <input type="submit" id="btnSubmit" name="btnSubmit" class="btnMain" value="Registrar">
+            <!-- Campos Espirituais -->
+
+            <h3 class="categoria">Espirituais</h3>
+            <hr class="category-line">
+            <div class="input-group">
+                <div class="linha">
+                    <label class="field__label">Publicador</label>
+                    <select id="selPublicador" name="publicador" class="field__input" ngModel>
+                        <option value=""></option>
+                        <option value="PublicadorNãoBatizado">Não batizado</option>
+                        <option value="PublicadorBatizado">Batizado</option>
+                    </select>
                 </div>
+                <div class="linha">
+                    <label class="field__label" for="txtDataBatismo">Data de batismo</label>
+                    <input type="date" id="txtDataBatismo" name="dataBatismo" class="field__input" ngModel>
+                </div>
+                <div class="linha">
+                    <label class="field__label" for="selGrupo">Grupo</label>
+                    <select id="selGrupo" name="grupo" class="field__input" ngModel>
+                        <option value=""></option>
+                        <option value="Brecheret">Brecheret</option>
+                        <option value="Campesina">Campesina</option>
+                        <option value="Filipini">Filipini</option>
+                        <option value="Guadalupe">Guadalupe</option>
+                        <option value="Salão do Reino">Salão do reino</option>
+                        <option value="Santina da Costa">Santina da Costa</option>
+                        <option value="Umuarama">Umuarama</option>
+                        <option value="Vila Yara">Vila Yara</option>
+                    </select>
+                </div>
+                <div class="linha">
+                    <label class="field__label">Privilégio</label>
+                    <label class="field_label"><input type="radio" name="privilegio" value="Ancião" ngModel>
+                        Ancião</label>
+                    <label class="field_label"><input type="radio" name="privilegio" value="Servo ministerial" ngModel>
+                        Servo</label>
+                </div>
+                <div class="linha" style="padding-left:2%">
+                    <label class="field__label">Pioneiro?</label>
+                    <label class="field_label"><input type="radio" name="pioneiro" value="Pioneiro Auxiliar" ngModel>
+                        Auxiliar</label>
+                    <label class="field_label"><input type="radio" name="pioneiro" value="Pioneiro Regular" ngModel>
+                        Regular</label>
+                    <label class="field_label"><input type="radio" name="pioneiro" value="Pioneiro Especial" ngModel>
+                        Especial</label>
+                </div>
+            </div>
+
+            <!-- Campos de Contato e Endereço -->
+
+            <h3 class="categoria">Contato e Endereço</h3>
+            <hr class="category-line">
+            <div class="input-group">
+                <div class="linha">
+                    <label class="field__label" for="txtTelefone">Telefone</label>
+                    <input type="tel" id="txtTelefone" name="telefone" class="field__input" ngModel>
+                </div>
+                <div class="linha">
+                    <label class="field__label" for="txtEmail">E-mail</label>
+                    <input type="email" id="txtEmail" name="email" class="field__input" ngModel>
+                </div>
+                <div class="linha">
+                    <label class="field__label" for="txtEndereco">Endereço</label>
+                    <input type="text" id="txtEndereco" name="endereco" class="field__input" size="50" ngModel>
+                </div>
+            </div>
+            <div class="input-group">
+                <div class="linha">
+                    <label class="field__label" for="txtNumero">Número</label>
+                    <input type="text" id="txtNumero" name="numero" class="field__input" ngModel>
+                </div>
+                <div class="linha">
+                    <label class="field__label" for="txtComplemento">Complemento</label>
+                    <input type="text" id="txtComplemento" name="complemento" class="field__input" ngModel>
+                </div>
+                <div class="linha">
+                    <label class="field__label" for="txtBairro">Bairro</label>
+                    <input type="text" id="txtBairro" name="bairro" class="field__input" ngModel>
+                </div>
+            </div>
+            <div class="input-group">
+                <div class="linha">
+                    <label class="field__label" for="txtCep">CEP</label>
+                    <input type="text" id="txtCep" name="cep" class="field__input" ngModel>
+                </div>
+                <div class="linha">
+                    <label class="field__label" for="txtMunicipio">Município</label>
+                    <input type="text" id="txtMunicipio" name="municipio" class="field__input" ngModel>
+                </div>
+                <div class="linha">
+                    <label class="field__label" for="txtUf">UF</label>
+                    <input type="text" id="txtUf" name="uf" class="field__input" ngModel>
+                </div>
+            </div>
+
+            <!-- Campos de Contato de Emergência -->
+
+            <h3 class="categoria">Contato de Emergência</h3>
+            <hr class="category-line">
+            <div class="input-group">
+                <div class="linha">
+                    <label class="field__label" for="txtContatoEmergencia">Nome</label>
+                    <input type="text" id="txtContatoEmergencia" name="contatoEmergenciaNome" class="field__input"
+                        ngModel>
+                </div>
+                <div class="linha">
+                    <label class="field__label" for="txtContatoEmergenciaParentesco">Parentesco</label>
+                    <input type="text" id="txtContatoEmergenciaParentesco" name="contatoEmergenciaParentesco"
+                        class="field__input" ngModel>
+                </div>
+                <div class="linha">
+                    <label class="field__label" for="txtContatoEmergenciaTelefone">Telefone</label>
+                    <input type="tel" id="txtContatoEmergenciaTelefone" name="contatoEmergenciaTelefone"
+                        class="field__input" ngModel>
+                </div>
+            </div>
+            <div class="frmBtns">
+                <button type="submit" id="btnSubmit" name="btnSubmit" class="btnMain" onclick=>Registrar</button>
+              </div>
+              <app-confirmacao-modal
+              [title]="'Confirmação'"
+              [message]="confirmationMessage"
+              [isConfirmationModalVisible]="isConfirmationModalVisible"
+              (confirmed)="onConfirmationModalResult($event)"
+            ></app-confirmacao-modal>
             </form>
         </div>
     </div>
