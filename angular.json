@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "congregation-manager": {
+    "congregacao-angular": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/congregation-manager",
+            "outputPath": "dist/congregacao-angular",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -68,10 +68,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "congregation-manager:build:production"
+              "browserTarget": "congregacao-angular:build:production"
             },
             "development": {
-              "browserTarget": "congregation-manager:build:development"
+              "browserTarget": "congregacao-angular:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -79,7 +79,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "congregation-manager:build"
+            "browserTarget": "congregacao-angular:build"
           }
         },
         "test": {
