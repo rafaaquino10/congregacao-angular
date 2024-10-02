@@ -1,0 +1,80 @@
+<body class="lista-pessoas">
+    <app-top-nav></app-top-nav>
+    <div class="content">
+        <div class="side-content">
+            <app-side-nav></app-side-nav>
+        </div>
+        <div class="main-content">
+            <div class="ng-star-inserted">
+                <section class="page ng-star-inserted">
+                    <header class="page__header">
+                        <p class="page__prefix-heading"> Vila Yara - Osasco SP (4663) </p>
+                        <h1 class="page__heading page__heading--title">Registros de pessoa</h1>
+                    </header>
+
+                    <!-- Formulário de Busca e Filtros -->
+                    <section>
+                        <div cssclass="margin-top-1 margin-bottom-2">
+                            <div class="margin-top-1 margin-bottom-2">
+                                <!-- Formulário de busca de nome -->
+                                <form (ngSubmit)="aplicarFiltros()" novalidate class="form form--edit">
+                                    <div class="field__clearable-input-wrapper">
+                                        <input
+                                            type="search"
+                                            [(ngModel)]="nomeFiltro"
+                                            name="nomeFiltro"
+                                            class="field__input field__input--clearable"
+                                            placeholder="Digite um nome"
+                                        />
+                                        <button
+                                            class="button button--has-icon@medium-up button--icon-only@small field__search-button"
+                                            type="submit"
+                                            aria-haspopup="false"
+                                        >
+                                            <div class="button__text">Pesquisar</div>
+                                        </button>
+                                        <button
+                                            class="button button--has-icon@medium-up button--icon-only@small field__clear-button"
+                                            type="button"
+                                            (click)="limparFiltros()"
+                                        >
+                                            Limpar Filtros
+                                        </button>
+                                    </div>
+                                </form>
+
+                                <!-- Filtros de Grupos -->
+                                <div class="bg-g0 padding-1 margin-top-2">
+                                    <div class="padding-left-1 grid buttons">
+                                        <button type="button" class="button bg-g0">
+                                            <span class="p700">Vila Yara</span>
+                                        </button>
+                                        <button type="button" class="button bg-g0">
+                                            <span class="p700">Victor Brecheret</span>
+                                        </button>
+                                        <button type="button" class="button bg-g0">
+                                            <span class="p700">Campesina</span>
+                                        </button>
+                                        <a class="button button--primary button--has-icon" href="">
+                                            <div class="button__icon"></div>
+                                            <div>Filtros…</div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Exibir lista de pessoas -->
+                        <div class="ng-star-inserted">
+                            <ul class="list">
+                                <li *ngFor="let pessoa of pessoas" class="list__item">
+                                    <app-card-pessoa [pessoa]="pessoa"></app-card-pessoa>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+                </section>
+            </div>
+        </div>
+    </div>
+</body>
