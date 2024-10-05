@@ -1,20 +1,21 @@
-<div class="side-nav hide-for-print" [ngClass]="{'expanded': menuService.isSideNavExpanded$ | async}">
-   <ul class="pagina_inicial">
-      <li class="class" routerLink="/home">
-         <a class="icon" href="#"> <img class="margin-right-05" src="../../../assets/icons/icon_jw-dashboard.svg"
-               width="32" height="32">Página
-            inicial</a>
-      </li>
-   </ul>
+<div class="side-nav" [ngClass]="{'expanded': menuService.isSideNavExpanded$ | async}">
+   <section class="side-nav__section"><a class="side-nav__context-link"
+      href="/home/pt?login_hint=8aquinorafael%40jwpub.org"><span class="icon side-nav__context-icon"><svg
+              xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="icon__body" height="32"
+              width="32">
+              <g>
+                  <path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"></path>
+              </g>
+          </svg></span>Página inicial</a></section>
    <section class="side-nav">
-      <h3 id="pessoas" class="side-nav__section submenu" (click)="toggleSubMenu('pessoas')">PESSOAS</h3>
+      <h3 id="pessoas" class="side-nav__section" (click)="toggleSubMenu('pessoas')">PESSOAS</h3>
       <ul class="side-nav__items" *ngIf="subMenus.pessoas">
          <li class="side-nav__item"><a class="side-nav__link" href="#">Visão geral</a></li>
          <li class="side-nav__item"><a class="side-nav__link" href="/listar-pessoas">Registro de pessoas</a></li>
          <li class="side-nav__item"><a class="side-nav__link" href="/cadastrar-pessoa">Registrar e atualizar</a></li>
          <li class="side-nav__item"><a class="side-nav__link" href="#">Importar registros</a></li>
       </ul>
-      <h3 id="reunioes" class="side-nav__section submenu" (click)="toggleSubMenu('reunioes')">REUNIÕES</h3>
+      <h3 id="reunioes" class="side-nav__section " (click)="toggleSubMenu('reunioes')">REUNIÕES</h3>
       <ul class="side-nav__items" *ngIf="subMenus.reunioes">
          <li class="side-nav__item"><a class="side-nav__link" href="#">Programação</a></li>
          <li class="side-nav__item"><a class="side-nav__link" href="#">Designações</a></li>

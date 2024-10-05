@@ -1,0 +1,90 @@
+/* Resetting default styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+  }
+  
+  .layout__main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  #page-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  fieldset {
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+  }
+  
+  legend {
+    font-weight: bold;
+    padding: 0 10px;
+  }
+  
+  .div-cell {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+  }
+  
+  .div-cell-inline {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .div-cell-inline .div-cell {
+    flex: 1;
+  }
+  
+  .strInputField input,
+  .strInputField select {
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  label {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  #privilegioField,
+  #dataBatismoField {
+    display: none;
+  }
+  
+  /* Styling for the emergency contact section */
+  .emergency-contact {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+  }
+  
+  /* Styling for inline radio buttons */
+  .strInputField input[type="radio"] {
+    margin-right: 5px;
+  }
+  
+  /* Media queries for responsiveness */
+  @media (max-width: 768px) {
+    .div-cell-inline {
+      flex-direction: column;
+    }
+    
+    .emergency-contact {
+      grid-template-columns: 1fr;
+    }
+  }

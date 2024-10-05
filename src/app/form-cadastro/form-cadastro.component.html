@@ -1,0 +1,201 @@
+<main class="layout__main bg-g0">
+    <a name="docTop"></a>
+    <div id="userDomainInfo">
+        <div class="padding-horizontal-1">
+            <p id="userinfo">Rafael Aquino<br><bdi dir="auto">Vila Yara - Osasco SP (4663)</bdi></p>
+        </div>
+    </div>
+    <div class="container--large padding-1@xsmall padding-1@small-up padding-horizontal-3@medium-up" id="page-content">
+
+        <!-- Dados básicos -->
+        <fieldset>
+            <legend>Dados básicos</legend>
+            <div class="div-cell-inline">
+                <div class="div-cell">
+                    <label for="nome">Nome</label>
+                    <div class="strInputField">
+                        <input type="text" id="nome" name="nome" />
+                    </div>
+                </div>
+                <div class="div-cell">
+                    <label for="nomeCompleto">Nome Completo</label>
+                    <div class="strInputField">
+                        <input type="text" id="nomeCompleto" name="nomeCompleto" />
+                    </div>
+                </div>
+                <div class="div-cell">
+                    <label for="genero">Gênero</label>
+                    <div class="strInputField">
+                        <select id="genero" name="genero" onchange="togglePrivilegioField()">
+                            <option value=""></option>
+                            <option value="feminino">Feminino</option>
+                            <option value="masculino">Masculino</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="div-cell">
+                    <label for="dataNascimento">Data de Nascimento</label>
+                    <div class="strInputField">
+                        <input type="date" id="dataNascimento" name="dataNascimento" />
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+
+        <!-- Espirituais -->
+        <fieldset>
+            <legend>Espirituais</legend>
+            <div class="div-cell-inline">
+                <div class="div-cell">
+                    <label for="batizado">Batizado</label>
+                    <div class="strInputField">
+                        <input type="checkbox" id="batizado" name="batizado" onchange="toggleDataBatismoField()" />
+                    </div>
+                </div>
+                <div class="div-cell" id="dataBatismoField">
+                    <label for="dataBatismo">Data de Batismo</label>
+                    <div class="strInputField">
+                        <input type="date" id="dataBatismo" name="dataBatismo" />
+                    </div>
+                </div>
+                <div class="div-cell" id="privilegioField">
+                    <label for="privilegio">Privilégio</label>
+                    <div class="strInputField">
+                        <select id="privilegio" name="privilegio">
+                            <option value=""></option>
+                            <option value="servoMinisterial">Servo Ministerial</option>
+                            <option value="anciao">Ancião</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+
+        <!-- Pioneiro -->
+        <fieldset>
+            <legend>Pioneiro</legend>
+            <div class="strInputField">
+                <input type="radio" id="pioneiroAuxiliar" name="pioneiro" value="auxiliar" />
+                <label for="pioneiroAuxiliar">Auxiliar</label>
+                <input type="radio" id="pioneiroRegular" name="pioneiro" value="regular" />
+                <label for="pioneiroRegular">Regular</label>
+                <input type="radio" id="pioneiroEspecial" name="pioneiro" value="especial" />
+                <label for="pioneiroEspecial">Especial</label>
+            </div>
+            <div class="div-cell">
+                <label for="ungido">Ungido</label>
+                <div class="strInputField">
+                    <input type="checkbox" id="ungido" name="ungido" />
+                </div>
+            </div>
+        </fieldset>
+
+        <!-- Endereço -->
+        <fieldset>
+            <legend>Endereço</legend>
+            <div class="div-cell-inline">
+                <div class="div-cell">
+                    <label for="logradouro">Logradouro</label>
+                    <div class="strInputField">
+                        <input type="text" id="logradouro" name="logradouro" />
+                    </div>
+                </div>
+                <div class="div-cell">
+                    <label for="numero">Número</label>
+                    <div class="strInputField">
+                        <input type="text" id="numero" name="numero" />
+                    </div>
+                </div>
+                <div class="div-cell">
+                    <label for="complemento">Complemento</label>
+                    <div class="strInputField">
+                        <input type="text" id="complemento" name="complemento" />
+                    </div>
+                </div>
+                <div class="div-cell">
+                    <label for="bairro">Bairro</label>
+                    <div class="strInputField">
+                        <input type="text" id="bairro" name="bairro" />
+                    </div>
+                </div>
+            </div>
+            <div class="div-cell-inline">
+                <div class="div-cell">
+                    <label for="cep">CEP</label>
+                    <div class="strInputField">
+                        <input type="text" id="cep" name="cep" />
+                    </div>
+                </div>
+                <div class="div-cell">
+                    <label for="cidade">Cidade</label>
+                    <div class="strInputField">
+                        <input type="text" id="cidade" name="cidade" />
+                    </div>
+                </div>
+                <div class="div-cell">
+                    <label for="uf">UF</label>
+                    <div class="strInputField">
+                        <input type="text" id="uf" name="uf" />
+                    </div>
+                </div>
+                <div class="div-cell">
+                    <label for="telefone">Telefone</label>
+                    <div class="strInputField">
+                        <input type="text" id="telefone" name="telefone" />
+                    </div>
+                </div>
+            </div>
+            <div class="div-cell">
+                <label for="email">Email</label>
+                <div class="strInputField">
+                    <input type="email" id="email" name="email" />
+                </div>
+            </div>
+        </fieldset>
+
+        <!-- Contatos de Emergência -->
+        <fieldset>
+            <legend>Contatos de Emergência</legend>
+            <div class="emergency-contact">
+                <div class="div-cell">
+                    <label for="emergNome">Nome</label>
+                    <div class="strInputField">
+                        <input type="text" id="emergNome" name="emergNome[]" />
+                    </div>
+                </div>
+                <div class="div-cell">
+                    <label for="emergParentesco">Parentesco</label>
+                    <div class="strInputField">
+                        <input type="text" id="emergParentesco" name="emergParentesco[]" />
+                    </div>
+                </div>
+                <div class="div-cell">
+                    <label for="emergTelefone">Telefone</label>
+                    <div class="strInputField">
+                        <input type="text" id="emergTelefone" name="emergTelefone[]" />
+                    </div>
+                </div>
+                <div class="div-cell">
+                    <label for="emergEmail">Email</label>
+                    <div class="strInputField">
+                        <input type="email" id="emergEmail" name="emergEmail[]" />
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+    </div>
+</main>
+
+<script>
+    function toggleDataBatismoField() {
+        const batizado = document.getElementById('batizado');
+        const dataBatismoField = document.getElementById('dataBatismoField');
+        dataBatismoField.style.display = batizado.checked ? 'block' : 'none';
+    }
+
+    function togglePrivilegioField() {
+        const genero = document.getElementById('genero').value;
+        const privilegioField = document.getElementById('privilegioField');
+        privilegioField.style.display = genero === 'masculino' ? 'block' : 'none';
+    }
+</script>

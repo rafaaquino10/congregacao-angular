@@ -6,6 +6,7 @@ import { HomePessoasComponent } from './components/pessoas/home-pessoas/home-pes
 import { CadastrarPessoaComponent } from './components/pessoas/cadastrar-pessoa/cadastrar-pessoa.component';
 import { EditarPessoaComponent } from './components/pessoas/editar-pessoa/editar-pessoa.component';
 import { ListarPessoasComponent } from './components/pessoas/listar-pessoas/listar-pessoas.component';
+import { NavigationComponent } from './navigation/navigation.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'cadastrar-pessoa', component: CadastrarPessoaComponent },
   { path: 'editar-pessoa', component: EditarPessoaComponent },
   { path: 'listar-pessoas', component: ListarPessoasComponent },
+  { path: 'navigation', component: NavigationComponent },
 ];
 
 @NgModule({

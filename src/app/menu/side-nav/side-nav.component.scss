@@ -1,24 +1,3 @@
-.pagina_inicial {
-  padding: 10px 25px;
-  padding-bottom: 25px;
-  padding-top: 25px;
-  background-image: linear-gradient(to bottom, transparent 50%, #ccc 50%);
-  background-size: 100% 1px;
-  background-repeat: no-repeat;
-  background-position: center bottom;
-  content: none;
-}
-
-.pagina_inicial li::marker {
-  content: none;
-  text-decoration: none;
-  /* Remove a sublinhado dos links */
-  color: #2a4970;
-  /* Mantém a cor de texto padrão */
-  cursor: pointer;
-  /* Muda o cursor para indicar interatividade */
-}
-
 .icon {
   font-size: 1.1em;
   cursor: pointer;
@@ -67,16 +46,6 @@
   background-color: #e0e0dfc4;
   color: #373433;
   text-decoration: underline;
-}
-
-.side-nav__header {
-  padding-left: 10px;
-  text-decoration: none;
-  /* Remove a sublinhado dos links */
-  color: inherit;
-  /* Mantém a cor de texto padrão */
-  cursor: pointer;
-  /* Muda o cursor para indicar interatividade */
 }
 
 .side-nav__link {
@@ -180,6 +149,10 @@ h3 {
   padding-left: 15px;
   padding-bottom: 5px;
   padding-top: 15px;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
 }
 
 .layout {

@@ -16,6 +16,8 @@ import { HomeTopNavComponent } from './menu/home-top-nav/home-top-nav.component'
 import { CardPessoaComponent } from './components/pessoas/listar-pessoas/card-pessoa/card-pessoa.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ConfirmacaoModalComponent } from './components/pessoas/confirmacao-modal/confirmacao-modal.component';
+import { NavigationComponent } from './navigation/navigation.component';
+import { FormCadastroComponent } from './form-cadastro/form-cadastro.component';
 
 
 @NgModule({
@@ -31,7 +33,9 @@ import { ConfirmacaoModalComponent } from './components/pessoas/confirmacao-moda
     SideNavComponent,
     HomeTopNavComponent,
     CardPessoaComponent,
-    ConfirmacaoModalComponent
+    ConfirmacaoModalComponent,
+    NavigationComponent,
+    FormCadastroComponent
   ],
   imports: [
     BrowserModule,
