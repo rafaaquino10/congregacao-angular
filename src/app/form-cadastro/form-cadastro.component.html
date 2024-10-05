@@ -1,201 +1,129 @@
 <main class="layout__main bg-g0">
-    <a name="docTop"></a>
-    <div id="userDomainInfo">
-        <div class="padding-horizontal-1">
-            <p id="userinfo">Rafael Aquino<br><bdi dir="auto">Vila Yara - Osasco SP (4663)</bdi></p>
+  <div class="container" id="page-content">
+    <!-- Dados básicos -->
+    <fieldset>
+      <legend>Nome e contato</legend>
+      <div class="form-row">
+        <div class="form-group width30">
+          <label for="nome">Nome</label>
+          <input type="text" id="nome" name="nome" [(ngModel)]="form.nome" />
         </div>
-    </div>
-    <div class="container--large padding-1@xsmall padding-1@small-up padding-horizontal-3@medium-up" id="page-content">
+        <div class="form-group width10">
+          <label for="genero">Gênero</label>
+          <select id="genero" name="genero" [(ngModel)]="form.genero" (change)="onGeneroChange()">
+            <option value=""></option>
+            <option value="feminino">Feminino</option>
+            <option value="masculino">Masculino</option>
+          </select>
+        </div>
+        <div class="form-group width13">
+          <label for="dataNascimento">Data de Nascimento</label>
+          <input type="date" id="dataNascimento" name="dataNascimento" [(ngModel)]="form.dataNascimento" />
+        </div>
+        <div class="form-group width13">
+          <label for="telefone">Telefone</label>
+          <input type="tel" id="telefone" name="telefone" [(ngModel)]="form.telefone" (input)="formatarTelefone()"
+            maxlength="15">
+        </div>
+        <div class="form-group width20">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" [(ngModel)]="form.email" />
+        </div>
+        <legend>Endereço</legend>
+        <div class="form-row">
+          <div class="form-group width10">
+            <label for="cep">CEP</label>
+            <input type="text" id="cep" name="cep" [(ngModel)]="form.cep" />
+          </div>
+          <div class="form-group width20">
+            <label for="logradouro">Logradouro</label>
+            <input type="text" id="logradouro" name="logradouro" [(ngModel)]="form.logradouro" />
+          </div>
+          <div class="form-group width5">
+            <label for="numero">Número</label>
+            <input type="text" id="numero" name="numero" [(ngModel)]="form.numero" />
+          </div>
+          <div class="form-group width15">
+            <label for="complemento">Complemento</label>
+            <input type="text" id="complemento" name="complemento" [(ngModel)]="form.complemento" />
+          </div>
+          <div class="form-group width15">
+            <label for="bairro">Bairro</label>
+            <input type="text" id="bairro" name="bairro" [(ngModel)]="form.bairro" />
+          </div>
+          <div class="form-group width15">
+            <label for="cidade">Cidade</label>
+            <input type="text" id="cidade" name="cidade" [(ngModel)]="form.cidade" />
+          </div>
+        </div>
 
-        <!-- Dados básicos -->
-        <fieldset>
-            <legend>Dados básicos</legend>
-            <div class="div-cell-inline">
-                <div class="div-cell">
-                    <label for="nome">Nome</label>
-                    <div class="strInputField">
-                        <input type="text" id="nome" name="nome" />
-                    </div>
-                </div>
-                <div class="div-cell">
-                    <label for="nomeCompleto">Nome Completo</label>
-                    <div class="strInputField">
-                        <input type="text" id="nomeCompleto" name="nomeCompleto" />
-                    </div>
-                </div>
-                <div class="div-cell">
-                    <label for="genero">Gênero</label>
-                    <div class="strInputField">
-                        <select id="genero" name="genero" onchange="togglePrivilegioField()">
-                            <option value=""></option>
-                            <option value="feminino">Feminino</option>
-                            <option value="masculino">Masculino</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="div-cell">
-                    <label for="dataNascimento">Data de Nascimento</label>
-                    <div class="strInputField">
-                        <input type="date" id="dataNascimento" name="dataNascimento" />
-                    </div>
-                </div>
-            </div>
-        </fieldset>
+        <legend>Espirituais</legend>
+        <div class="form-row">
+          <div class="form-group width10">
+            <label for="batizado">Batizado?</label>
+            <select id="batizado" name="batizado" [(ngModel)]="form.batizado" (change)="onBatizadoChange()">
+              <option value="0">Não</option>
+              <option value="1">Sim</option>
+            </select>
+          </div>
+          <div class="form-group width10" *ngIf="form.batizado">
+            <label for="ungido">Ungido?</label>
+            <select id="ungido" name="ungido" [(ngModel)]="form.ungido" (change)="onBatizadoChange()">
+              <option selected value="0">Não</option>
+              <option value="1">Sim</option>
+            </select>
+          </div>
+          <div class="form-group width13" *ngIf="form.batizado">
+            <label for="dataBatismo">Data de Batismo</label>
+            <input type="date" id="dataBatismo" name="dataBatismo" [(ngModel)]="form.dataBatismo" />
+          </div>
+          <div class="form-group width15" *ngIf="form.batizado">
+            <label for="pioneiro">Pioneiro</label>
+            <select id="pioneiro" name="pioneiro" [(ngModel)]="form.pioneiro">
+              <option value=""></option>
+              <option value="auxiliar">Auxiliar</option>
+              <option value="regular">Regular</option>
+              <option value="especial">Especial</option>
+            </select>
+          </div>
+          <div class="form-group width16" *ngIf="form.genero === 'masculino'">
+            <label for="privilegio">Privilégio</label>
+            <select id="privilegio" name="privilegio" [(ngModel)]="form.privilegio">
+              <option value=""></option>
+              <option value="servoMinisterial">Servo Ministerial</option>
+              <option value="anciao">Ancião</option>
+            </select>
+          </div>
+          <div class="form-group width10" *ngIf="form.genero === 'masculino'">
+            <label for="grupo">Grupo</label>
+            <select id="grupo" name="grupo" [(ngModel)]="form.grupo">
+              <option value=""></option>
+              <option value="servoMinisterial">Servo Ministerial</option>
+              <option value="anciao">Ancião</option>
+            </select>
+          </div>
+        </div>
 
-        <!-- Espirituais -->
-        <fieldset>
-            <legend>Espirituais</legend>
-            <div class="div-cell-inline">
-                <div class="div-cell">
-                    <label for="batizado">Batizado</label>
-                    <div class="strInputField">
-                        <input type="checkbox" id="batizado" name="batizado" onchange="toggleDataBatismoField()" />
-                    </div>
-                </div>
-                <div class="div-cell" id="dataBatismoField">
-                    <label for="dataBatismo">Data de Batismo</label>
-                    <div class="strInputField">
-                        <input type="date" id="dataBatismo" name="dataBatismo" />
-                    </div>
-                </div>
-                <div class="div-cell" id="privilegioField">
-                    <label for="privilegio">Privilégio</label>
-                    <div class="strInputField">
-                        <select id="privilegio" name="privilegio">
-                            <option value=""></option>
-                            <option value="servoMinisterial">Servo Ministerial</option>
-                            <option value="anciao">Ancião</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-        </fieldset>
-
-        <!-- Pioneiro -->
-        <fieldset>
-            <legend>Pioneiro</legend>
-            <div class="strInputField">
-                <input type="radio" id="pioneiroAuxiliar" name="pioneiro" value="auxiliar" />
-                <label for="pioneiroAuxiliar">Auxiliar</label>
-                <input type="radio" id="pioneiroRegular" name="pioneiro" value="regular" />
-                <label for="pioneiroRegular">Regular</label>
-                <input type="radio" id="pioneiroEspecial" name="pioneiro" value="especial" />
-                <label for="pioneiroEspecial">Especial</label>
-            </div>
-            <div class="div-cell">
-                <label for="ungido">Ungido</label>
-                <div class="strInputField">
-                    <input type="checkbox" id="ungido" name="ungido" />
-                </div>
-            </div>
-        </fieldset>
-
-        <!-- Endereço -->
-        <fieldset>
-            <legend>Endereço</legend>
-            <div class="div-cell-inline">
-                <div class="div-cell">
-                    <label for="logradouro">Logradouro</label>
-                    <div class="strInputField">
-                        <input type="text" id="logradouro" name="logradouro" />
-                    </div>
-                </div>
-                <div class="div-cell">
-                    <label for="numero">Número</label>
-                    <div class="strInputField">
-                        <input type="text" id="numero" name="numero" />
-                    </div>
-                </div>
-                <div class="div-cell">
-                    <label for="complemento">Complemento</label>
-                    <div class="strInputField">
-                        <input type="text" id="complemento" name="complemento" />
-                    </div>
-                </div>
-                <div class="div-cell">
-                    <label for="bairro">Bairro</label>
-                    <div class="strInputField">
-                        <input type="text" id="bairro" name="bairro" />
-                    </div>
-                </div>
-            </div>
-            <div class="div-cell-inline">
-                <div class="div-cell">
-                    <label for="cep">CEP</label>
-                    <div class="strInputField">
-                        <input type="text" id="cep" name="cep" />
-                    </div>
-                </div>
-                <div class="div-cell">
-                    <label for="cidade">Cidade</label>
-                    <div class="strInputField">
-                        <input type="text" id="cidade" name="cidade" />
-                    </div>
-                </div>
-                <div class="div-cell">
-                    <label for="uf">UF</label>
-                    <div class="strInputField">
-                        <input type="text" id="uf" name="uf" />
-                    </div>
-                </div>
-                <div class="div-cell">
-                    <label for="telefone">Telefone</label>
-                    <div class="strInputField">
-                        <input type="text" id="telefone" name="telefone" />
-                    </div>
-                </div>
-            </div>
-            <div class="div-cell">
-                <label for="email">Email</label>
-                <div class="strInputField">
-                    <input type="email" id="email" name="email" />
-                </div>
-            </div>
-        </fieldset>
-
-        <!-- Contatos de Emergência -->
-        <fieldset>
-            <legend>Contatos de Emergência</legend>
-            <div class="emergency-contact">
-                <div class="div-cell">
-                    <label for="emergNome">Nome</label>
-                    <div class="strInputField">
-                        <input type="text" id="emergNome" name="emergNome[]" />
-                    </div>
-                </div>
-                <div class="div-cell">
-                    <label for="emergParentesco">Parentesco</label>
-                    <div class="strInputField">
-                        <input type="text" id="emergParentesco" name="emergParentesco[]" />
-                    </div>
-                </div>
-                <div class="div-cell">
-                    <label for="emergTelefone">Telefone</label>
-                    <div class="strInputField">
-                        <input type="text" id="emergTelefone" name="emergTelefone[]" />
-                    </div>
-                </div>
-                <div class="div-cell">
-                    <label for="emergEmail">Email</label>
-                    <div class="strInputField">
-                        <input type="email" id="emergEmail" name="emergEmail[]" />
-                    </div>
-                </div>
-            </div>
-        </fieldset>
-    </div>
+        <legend>Contatos de Emergência</legend>
+        <div class="form-row">
+          <div class="form-group width25">
+            <label for="emergNome">Nome</label>
+            <input type="text" id="emergNome" name="emergNome[]" [(ngModel)]="form.emergNome" />
+          </div>
+          <div class="form-group width20">
+            <label for="emergParentesco">Parentesco</label>
+            <input type="text" id="emergParentesco" name="emergParentesco[]" [(ngModel)]="form.emergParentesco" />
+          </div>
+          <div class="form-group width22">
+            <label for="emergTelefone">Telefone</label>
+            <input type="text" id="emergTelefone" name="emergTelefone[]" [(ngModel)]="form.emergTelefone" />
+          </div>
+          <div class="form-group width22">
+            <label for="emergEmail">Email</label>
+            <input type="email" id="emergEmail" name="emergEmail[]" [(ngModel)]="form.emergEmail" />
+          </div>
+        </div>
+      </div>
+    </fieldset>
+  </div>
 </main>
-
-<script>
-    function toggleDataBatismoField() {
-        const batizado = document.getElementById('batizado');
-        const dataBatismoField = document.getElementById('dataBatismoField');
-        dataBatismoField.style.display = batizado.checked ? 'block' : 'none';
-    }
-
-    function togglePrivilegioField() {
-        const genero = document.getElementById('genero').value;
-        const privilegioField = document.getElementById('privilegioField');
-        privilegioField.style.display = genero === 'masculino' ? 'block' : 'none';
-    }
-</script>

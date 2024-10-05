@@ -72,6 +72,7 @@ h3 {
     flex-grow: 1; // O conteúdo principal ocupa o espaço restante
     overflow: auto;
     display: flex; /* Usar Flexbox para posicionamento */
+    justify-content: center;
 }
 
 .custom-button {
