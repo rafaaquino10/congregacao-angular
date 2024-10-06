@@ -12,15 +12,15 @@ body {
 input:hover,
 select:hover,
 textarea:hover {
-  border: 1.5px solid #4a6da7 !important; /* Adiciona um estilo de borda com maior espessura e prioridade */
+  border: 1.5px solid #6797e5 !important;
 }
 
 /* Estilo para inputs focados, para melhorar o UX */
 input:focus,
 select:focus,
 textarea:focus {
-  outline: none !important; /* Remove o outline padrão */
-  border: 1.5px solid #4a6da7 !important; /* Deixa a borda azul quando o campo está focado */
+  outline: none !important;
+  border: 1.5px solid #6797e5 !important;
 }
 
 .layout__main {
@@ -30,7 +30,7 @@ textarea:focus {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start; /* Alinhado ao topo, não centralizado */
   min-height: 100vh;
 }
 
@@ -49,30 +49,40 @@ fieldset {
 legend {
   font-weight: bold;
   padding: 0 10px;
-  font-size: 1.2em;
+  padding-left: 0;
+  font-size: 1.5em;
 }
 
 .form-row {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 10px; /* Espaçamento entre os elementos */
   margin-bottom: 20px;
 }
 
 .form-group {
-  flex: 1; /* Faz o item ocupar espaço igual, permitindo uma distribuição fluida */
-  min-width: 150px; /* Define um valor mínimo para evitar campos muito pequenos */
+  min-width: 150px; /* Define o valor mínimo para garantir campos menores não se deformem */
   display: flex;
   flex-direction: column;
-}
-.width5 {
-  flex: 1 1 5%;
+  box-sizing: border-box;
 }
 
-.width6 {
-  flex: 1 1 6%;
+/* Estilo dos inputs */
+input[type='text'],
+input[type='date'],
+input[type='email'],
+input[type='tel'],
+select {
+  padding: 10px;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+  box-sizing: border-box; /* Garante que o padding e a borda não afetem a largura total */
+  min-height: 42px; /* Define uma altura mínima para garantir consistência */
 }
 
+/* Classes de largura personalizadas */
 .width7 {
   flex: 1 1 7%;
 }
@@ -97,7 +107,7 @@ legend {
   flex: 1 1 12%;
 }
 
-.width13 {
+.width130 {
   flex: 1 1 13%;
 }
 
@@ -105,36 +115,13 @@ legend {
   flex: 1 1 14%;
 }
 
+
 .width15 {
   flex: 1 1 15%;
 }
 
-.width16 {
-  flex: 1 1 16%;
-}
-
-.width17 {
-  flex: 1 1 17%;
-}
-
 .width20 {
   flex: 1 1 20%;
-}
-
-.width21 {
-  flex: 1 1 21%;
-}
-
-.width22 {
-  flex: 1 1 22%;
-}
-
-.width23 {
-  flex: 1 1 23%;
-}
-
-.width24 {
-  flex: 1 1 24%;
 }
 
 .width25 {
@@ -153,24 +140,8 @@ legend {
   flex: 1 1 50%;
 }
 
-.width60 {
-  flex: 1 1 60%;
-}
-
-input[type='text'],
-input[type='date'],
-input[type='email'],
-input[type='tel'],
-select {
-  padding: 10px;
-  font-size: 1em;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  width: 100%;
-}
-
 label {
-  font-weight: bold;
+  font-weight: normal;
   margin-bottom: 5px;
 }
 
