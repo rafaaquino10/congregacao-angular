@@ -37,32 +37,21 @@
     <div class="layout__content">
         <nav class="side-nav">
             <h2 class="sr-only">Menu</h2>
-            <section class="side-nav__section">
-                <a class="side-nav__context-link" href="">
-                    <span class="icon side-nav__context-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="icon__body" height="32" width="32">
-                            <g>
-                                <path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"></path>
-                            </g>
-                        </svg>
-                    </span>Página inicial
-                </a>
-            </section>
-            <h3 id="pessoas" class="side-nav__section side-nav__item" (click)="toggleSubMenu('pessoas')">Pessoas</h3>
+            <a id="pessoas" class="side-nav_menu-item side-nav__section side-nav__item" (click)="toggleSubMenu('pessoas')">PESSOAS</a>
             <ul *ngIf="subMenus.pessoas">
                 <li class="side-nav__sub-item"><a class="side-nav__link" href="/cadastrar-pessoa">Registrar pessoa</a></li>
                 <li class="side-nav__sub-item"><a class="side-nav__link" href="/listar-pessoas">Lista de pessoas</a></li>
                 <li class="side-nav__sub-item"><a class="side-nav__link" href="#">Visualizar grupos</a></li>
             </ul>
-            <h3 id="reunioes" class="side-nav__section side-nav__item" (click)="toggleSubMenu('reunioes')">Reuniões</h3>
+            <a id="pessoas" class="side-nav_menu-item side-nav__section side-nav__item" (click)="toggleSubMenu('pessoas')">REUNIÕES</a>
             <ul *ngIf="subMenus.reunioes">
                 <li class="side-nav__sub-item"><a class="side-nav__link" href="#">Programação</a></li>
                 <li class="side-nav__sub-item"><a class="side-nav__link" href="#">Designações</a></li>
                 <li class="side-nav__sub-item"><a class="side-nav__link" href="#">Assistência</a></li>
                 <li class="side-nav__sub-item"><a class="side-nav__link" href="#">Quadro de anúncios</a></li>
             </ul>
-            <h3 id="territorios" class="side-nav__section side-nav__item">Territórios</h3>
-            <h3 id="relatorios" class="side-nav__section side-nav__item">Relatórios</h3>
+            <a id="pessoas" class="side-nav_menu-item side-nav__section side-nav__item" (click)="toggleSubMenu('pessoas')">TERRITÓRIOS</a>
+            <a id="pessoas" class="side-nav_menu-item side-nav__section side-nav__item" (click)="toggleSubMenu('pessoas')">RELATÓRIOS</a>
         </nav>
         <main class="layout__content">
             <!-- Aqui é onde o conteúdo principal será renderizado, como o form-cadastro -->

@@ -1,22 +1,43 @@
 li {
     list-style: none;
-    /* Remove o marcador de item */
 }
 
-ul {
-    margin-left: 1%;
+ol, ul {
+    padding-left: 0rem;
 }
 
-h3 {
+
+.side-nav_menu-item {
     display: block;
+    font-size: x-large;
     border-style: solid;
     border-color: transparent;
-    border-width: 0 0 0 5px;
+    border-width: 0 0 0 0;
     padding: 0.6rem 0.6rem 0.6rem 1rem;
     text-decoration: none;
-    color: #2a4970;
+    color: #7a7776;
     margin-bottom: 0;
 }
+
+.side-nav_menu-item:hover {
+    text-decoration: underline;
+    text-decoration-color: #7a7776;
+}
+
+.side-nav_menu-item {
+    display: block;
+    font-size: x-large;
+    padding: 0.4rem 1rem; /* Padding vertical mais curto */
+    text-decoration: none;
+    color: #7a7776;
+    margin-bottom: 0;
+    border-bottom: 1px solid #b7b4b3; /* Borda inferior */
+  }
+  
+  /* Remove a borda do primeiro item */
+  .side-nav_menu-item:first-child {
+    border-top: none;
+  }
 
 .layout__main {
     min-height: 244px;
@@ -35,12 +56,6 @@ h3 {
     min-height: 100vh; // Altura mínima para ocupar a tela inteira
 }
 
-.side-nav {
-    width: 250px; // Largura fixa para o menu lateral   ahhhhh
-    background-color: #f7f7f7;
-    padding: 20px;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-}
 
 .side-nav__is-collapsed {
     &:checked + .layout__container .side-nav {
@@ -56,10 +71,6 @@ h3 {
   .layout__container {
     display: flex;
   
-    .side-nav {
-      width: 250px;
-      transition: transform 0.3s ease;
-    }
   
     .layout__content {
       flex: 1;
@@ -1425,14 +1436,9 @@ nav {
     cursor: pointer;
 }
 
-.side-nav__item>a {
-    font-size: 1.0em;
-    /* Define uma fonte maior para os itens principais */
-}
 
 .side-nav__sub-item {
     padding-left: 0px;
-    /* Recuo adicional para os subitens */
     font-size: 1.0em;
     /* Define um tamanho de fonte menor para os subitens */
 }
@@ -1498,11 +1504,10 @@ nav {
 }
 
 .side-nav__item--active .side-nav__link {
-    border-color: #386195;
     background-color: #e7e6e4
 }
 
-.side-nav__item:hover,
+
 .side-nav__link:focus {
     color: #2a4970;
     transition: background-color .8s ease;
@@ -1840,7 +1845,7 @@ nav {
     margin-right: .7rem;
     font-size: 1.5rem;
     display: inline-block;
-    color: #f0f0ef;
+    color: white;
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden
