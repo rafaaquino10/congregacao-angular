@@ -83,7 +83,7 @@ ol, ul {
     flex-grow: 1; // O conteúdo principal ocupa o espaço restante
     overflow: auto;
     display: flex; /* Usar Flexbox para posicionamento */
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 .custom-button {
@@ -1757,7 +1757,8 @@ nav {
     font-weight: 400;
     margin-left: .7rem;
     margin-right: .7rem;
-    font-size: 1.05rem;
+    margin-bottom: 0;
+    font-size: 1.1rem;
     display: inline-block;
     color: #f0f0ef;
     white-space: nowrap;

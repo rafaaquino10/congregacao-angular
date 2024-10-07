@@ -1,20 +1,16 @@
 @charset "UTF-8";
 @import url('https://fonts.googleapis.com/css2?family=Carlito:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
-/* Resetando estilos globais que podem estar interferindo nos inputs e definindo tipografia global responsiva */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 
 /* Tipografia global responsiva */
 html {
-  font-size: 100%; /* Base para cálculo de em/rem */
+  font-size: 100%;
+  /* Base para cálculo de em/rem */
 }
 
 body {
-  font-family: "Carlito", system-ui;   /* Fonte padrão com fallback */
+  font-family: "Carlito", system-ui;
+  /* Fonte padrão com fallback */
   line-height: 1.5;
   font-size: 1rem;
   max-width: 100%;
@@ -26,29 +22,57 @@ body {
 
 @media (max-width: 1024px) {
   html {
-    font-size: 90%; /* Ajuste para telas médias */
+    font-size: 90%;
+    /* Ajuste para telas médias */
   }
 }
 
 @media (max-width: 768px) {
   html {
-    font-size: 85%; /* Ajuste para telas menores */
+    font-size: 85%;
+    /* Ajuste para telas menores */
   }
 }
 
 @media (max-width: 480px) {
   html {
-    font-size: 80%; /* Ajuste para telas muito pequenas */
+    font-size: 80%;
+    /* Ajuste para telas muito pequenas */
   }
 }
+
 
 /* Normalmente estilos gerais como esses podem sobrepor os estímulos de hover/focus aplicados nos inputs */
 input,
 select,
 textarea {
-  border: 1px solid #ccc;
+  padding: .5rem;
+  border: 1px solid #d5d4d2;
+  border-radius: 2px;
+  box-sizing: border-box;
+  width: 100%;
   outline: none;
-  font-family: inherit; /* Garante que os inputs herdem a fonte do body */
+  font-family: inherit;
+  font-size: 1rem;
+  min-height: 42px;
+  /* Garante que os inputs herdem a fonte do body */
+}
+
+input[type='text'],
+input[type='date'],
+input[type='email'],
+input[type='tel'],
+select,
+textarea {
+  padding-left: 10px; /* Ajuste o valor conforme necessário */
+  font-size: 1em;
+  border: 1px solid #ccc;
+  width: 100%;
+  box-sizing: border-box; /* Garante que o padding e a borda não afetem a largura total */
+}
+
+textarea {
+  padding-left: 10px;
 }
 
 /* Adicionando hover e focus explicitamente */
@@ -56,78 +80,109 @@ input:hover,
 select:hover,
 textarea:hover {
   border-color: #4a6da7;
+  border: 1.5px solid #4a6da7;
 }
 
 input:focus,
 select:focus,
 textarea:focus {
-  border-color: #4a6da7;
+  border-radius: 3px;
+  border: 2px solid #4a6da7;
   outline: none;
 }
 
+.btnMain {
+  background-color: #386195;
+  border: 1px solid #508ad0;
+  color: #f8f8f7;
+}
+
+.btnMain:hover {
+  background-color: #35557d;
+  border: 1px solid #1d334e;
+  color: #f8f8f7;
+}
+
+.btnMain,
+input[type="button"] {
+  font-weight: bold;
+  font-style: inherit;
+}
+
+
 /* Controlando tamanhos de fontes de títulos de forma global */
 h1 {
-   font-size: 2.5rem;
- }
- 
- h2 {
-   font-size: 2rem;
- }
- 
- h3 {
-   font-size: 1.75rem;
- }
- 
- h4 {
-   font-size: 1.5rem;
- }
- 
- h5 {
-   font-size: 1.25rem;
- }
- 
- h6 {
-   font-size: 1rem;
- }
- 
- @media (max-width: 768px) {
-   h1 {
-     font-size: 2rem;
-   }
-   h2 {
-     font-size: 1.75rem;
-   }
-   h3 {
-     font-size: 1.5rem;
-   }
-   h4 {
-     font-size: 1.25rem;
-   }
-   h5 {
-     font-size: 1.1rem;
-   }
-   h6 {
-     font-size: 0.9rem;
-   }
- }
- 
- @media (max-width: 480px) {
-   h1 {
-     font-size: 1.75rem;
-   }
-   h2 {
-     font-size: 1.5rem;
-   }
-   h3 {
-     font-size: 1.25rem;
-   }
-   h4 {
-     font-size: 1.1rem;
-   }
-   h5 {
-     font-size: 1rem;
-   }
-   h6 {
-     font-size: 0.85rem;
-   }
- }
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.75rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+}
+
+h5 {
+  font-size: 1.25rem;
+}
+
+h6 {
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+  }
+
+  h4 {
+    font-size: 1.25rem;
+  }
+
+  h5 {
+    font-size: 1.1rem;
+  }
+
+  h6 {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.75rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+  }
+
+  h4 {
+    font-size: 1.1rem;
+  }
+
+  h5 {
+    font-size: 1rem;
+  }
+
+  h6 {
+    font-size: 0.85rem;
+  }
+}
