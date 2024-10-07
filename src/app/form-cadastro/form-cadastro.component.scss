@@ -43,7 +43,7 @@ textarea:focus {
 fieldset {
   border: 1px solid #ccc;
   padding: 20px;
-  border-radius: 5px;
+  border-radius: 3px;
 }
 
 legend {
@@ -75,8 +75,8 @@ input[type='tel'],
 select {
   padding: 10px;
   font-size: 1em;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  border: 1px solid #f6f2f2;
+  border-radius: 2px;
   width: 100%;
   box-sizing: border-box; /* Garante que o padding e a borda não afetem a largura total */
   min-height: 42px; /* Define uma altura mínima para garantir consistência */

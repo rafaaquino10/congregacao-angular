@@ -53,7 +53,7 @@ ol, ul {
 .layout__container {
     display: flex;
     flex-direction: row;
-    min-height: 100vh; // Altura mínima para ocupar a tela inteira
+    min-height: 100%; // Altura mínima para ocupar a tela inteira
 }
 
 
@@ -1812,7 +1812,6 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 0;
     border: 0;
     background-color: transparent;
     padding: 0;
