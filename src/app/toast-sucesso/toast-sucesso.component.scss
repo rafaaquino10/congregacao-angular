@@ -1,0 +1,71 @@
+.toast {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 10%;
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    background-color:  #EEEEEE;
+    border: 1px solid #66BB6A;
+    transition: opacity 0.5s ease-in-out;
+    opacity: 1;
+  
+    &.toast-success {
+      border-color: #66BB6A;
+      background-color: #EEEEEE;
+    }
+  
+    .toast-content {
+      display: flex;
+      align-items: center;
+    }
+  
+    .toast-icon {
+      margin-right: 8px;
+      display: flex;
+      align-items: center;
+      svg {
+        fill: var(--color-green-400);
+      }
+    }
+  
+    .toast-text {
+      .toast-title {
+        display: flex;
+        font-weight: bold;
+        font-size: 1.2rem;
+        align-items: end;
+      }
+    }
+  }
+
+  .toast-icon {
+    color: #66BB6A; // Cor do ícone
+    margin-bottom: 4px;
+  }
+  
+  .icon {
+    height: 24px;
+    width: 24px;
+  }
+
+  .toast-content {
+    display: flex;
+    align-items: center; // Alinha o conteúdo ao final (na margem inferior)
+  }
+  
+  .toast-text {
+    display: flex;
+    align-items: center; // Certifica-se de que o texto esteja alinhado na base do ícone
+    margin-top: 5px; // Ajuste conforme necessário para garantir que o texto e o ícone estejam bem alinhados
+  }
+
+  .toast-title {
+    margin-bottom: 0; // Remove qualquer espaçamento extra na parte inferior
+    margin-top: auto; // Para empurrar o texto para baixo e alinhar com o ícone
+  }
+  
+  

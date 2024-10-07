@@ -2,42 +2,38 @@ li {
     list-style: none;
 }
 
-ol, ul {
+ol,
+ul {
     padding-left: 0rem;
 }
 
 
 .side-nav_menu-item {
     display: block;
-    font-size: x-large;
+    font-size: 150%;
     border-style: solid;
     border-color: transparent;
     border-width: 0 0 0 0;
-    padding: 0.6rem 0.6rem 0.6rem 1rem;
     text-decoration: none;
-    color: #7a7776;
+    color: #335d91;
     margin-bottom: 0;
+    padding: 0.1rem 1rem;
+    /* Padding vertical mais curto */
+    border-bottom: 1px solid #cac6c5;
+    /* Borda inferior */
+    ;
 }
 
 .side-nav_menu-item:hover {
     text-decoration: underline;
     text-decoration-color: #7a7776;
+    text-decoration-thickness: 1px;
 }
 
-.side-nav_menu-item {
-    display: block;
-    font-size: x-large;
-    padding: 0.4rem 1rem; /* Padding vertical mais curto */
-    text-decoration: none;
-    color: #7a7776;
-    margin-bottom: 0;
-    border-bottom: 1px solid #b7b4b3; /* Borda inferior */
-  }
-  
-  /* Remove a borda do primeiro item */
-  .side-nav_menu-item:first-child {
+/* Remove a borda do primeiro item */
+.side-nav_menu-item:first-child {
     border-top: none;
-  }
+}
 
 .layout__main {
     min-height: 244px;
@@ -58,31 +54,34 @@ ol, ul {
 
 
 .side-nav__is-collapsed {
-    &:checked + .layout__container .side-nav {
-      transform: translateX(-100%); /* Oculta a barra lateral quando colapsada */
-      transition: transform 0.3s ease;
+    &:checked+.layout__container .side-nav {
+        transform: translateX(-100%);
+        /* Oculta a barra lateral quando colapsada */
+        transition: transform 0.3s ease;
     }
-  
-    &:checked + .layout__container .layout__content {
-      margin-left: 0; /* Garante que o conteúdo principal ocupe a tela toda quando a barra lateral está oculta */
-    }
-  }
 
-  .layout__container {
-    display: flex;
-  
-  
-    .layout__content {
-      flex: 1;
-      padding: 20px;
-      transition: margin-left 0.3s ease;
+    &:checked+.layout__container .layout__content {
+        margin-left: 0;
+        /* Garante que o conteúdo principal ocupe a tela toda quando a barra lateral está oculta */
     }
-  }
+}
+
+.layout__container {
+    display: flex;
+
+
+    .layout__content {
+        flex: 1;
+        padding: 20px;
+        transition: margin-left 0.3s ease;
+    }
+}
 
 .layout__content {
     flex-grow: 1; // O conteúdo principal ocupa o espaço restante
     overflow: auto;
-    display: flex; /* Usar Flexbox para posicionamento */
+    display: flex;
+    /* Usar Flexbox para posicionamento */
     justify-content: flex-start;
 }
 
@@ -1351,7 +1350,7 @@ nav {
 
 .side-nav__sub-item:hover,
 .side-nav__link:focus {
-    color: #2a4970;
+    color: #4677b3;
     transition: background-color .8s ease;
     transform: translateZ(0);
     border-left: 5px #2a4970 solid;
@@ -1364,7 +1363,7 @@ nav {
     border-width: 0 0 0 5px;
     padding: .6rem .6rem .6rem 1rem;
     text-decoration: none;
-    color: #2a4970
+    color: #4677b3
 }
 
 .side-nav__context-link:focus,
@@ -1372,7 +1371,7 @@ nav {
 .side-nav__link:hover,
 .side-nav__link:focus {
     background-color: #e7e6e4;
-    color: #2a4970;
+    color: #4677b3;
     text-decoration: none
 }
 
@@ -1774,7 +1773,7 @@ nav {
 .top-nav__item {
     list-style-type: none;
     text-transform: uppercase;
-    display: inline-flex
+    display: inline-flex;
 }
 
 .top-nav__link {

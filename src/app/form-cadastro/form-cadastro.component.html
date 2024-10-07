@@ -1,6 +1,6 @@
 <main class="layout__main">
   <div class="container" id="page-content">
-    <form action="">
+    <form (ngSubmit)="salvarFormulario()" #formCadastro="ngForm">
       <fieldset>
         <legend>Nome e contato</legend>
         <div class="form-row">
@@ -56,6 +56,10 @@
             <label for="cidade">Cidade</label>
             <input type="text" id="cidade" name="cidade" [(ngModel)]="form.cidade" />
           </div>
+          <div class="form-group width5">
+            <label for="uf">UF</label>
+            <input type="text" id="uf" name="uf" [(ngModel)]="form.uf" />
+          </div>
         </div>
 
         <legend>Espirituais</legend>
@@ -109,26 +113,28 @@
         <div class="form-row">
           <div class="form-group width20">
             <label for="emergNome">Nome</label>
-            <input type="text" id="emergNome" name="emergNome[]" [(ngModel)]="form.emergNome" />
+            <input type="text" id="emergNome" name="emergNome" [(ngModel)]="form.emergNome" />
           </div>
           <div class="form-group width10">
             <label for="emergParentesco">Parentesco</label>
-            <input type="text" id="emergParentesco" name="emergParentesco[]" [(ngModel)]="form.emergParentesco" />
+            <input type="text" id="emergParentesco" name="emergParentesco" [(ngModel)]="form.emergParentesco" />
           </div>
           <div class="form-group width10">
             <label for="emergTelefone">Telefone</label>
-            <input type="text" id="emergTelefone" name="emergTelefone[]" [(ngModel)]="form.emergTelefone" />
+            <input type="text" id="emergTelefone" name="emergTelefone" [(ngModel)]="form.emergTelefone" />
           </div>
           <div class="form-group width10">
             <label for="emergEmail">Email</label>
-            <input type="email" id="emergEmail" name="emergEmail[]" [(ngModel)]="form.emergEmail" />
+            <input type="email" id="emergEmail" name="emergEmail" [(ngModel)]="form.emergEmail" />
           </div>
         </div>
-        <div class="form-row">
-          <input type="submit" value="SALVAR" class="btnMain width10" onclick="">
-          <input type="button" value="LIMPAR" class="width10" onclick="">
+        <br>
+        <div class="form-row" style="width: 40%">
+          <input type="submit" value="Salvar" class="btnMain width20">
+          <input type="button" value="Limpar" class="width20" (click)="limparFormulario(formCadastro)">
        </div>
       </fieldset>
     </form>
+    <app-toast-sucesso #toast></app-toast-sucesso>
   </div>
 </main>

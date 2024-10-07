@@ -18,6 +18,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ConfirmacaoModalComponent } from './components/pessoas/confirmacao-modal/confirmacao-modal.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { FormCadastroComponent } from './form-cadastro/form-cadastro.component';
+import { ToastSucessoComponent } from './toast-sucesso/toast-sucesso.component';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { FormCadastroComponent } from './form-cadastro/form-cadastro.component';
     CardPessoaComponent,
     ConfirmacaoModalComponent,
     NavigationComponent,
-    FormCadastroComponent
+    FormCadastroComponent,
+    ToastSucessoComponent
   ],
   imports: [
     BrowserModule,
