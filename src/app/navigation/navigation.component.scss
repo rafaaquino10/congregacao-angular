@@ -7,21 +7,39 @@ ul {
     padding-left: 0rem;
 }
 
-
 .side-nav_menu-item {
+    cursor: pointer;
+    font-weight: normal;
+    letter-spacing: 1px;
     display: block;
-    font-size: 150%;
+    font-size: 20px;
     border-style: solid;
     border-color: transparent;
     border-width: 0 0 0 0;
     text-decoration: none;
-    color: #335d91;
+    color: #615d5c;
     margin-bottom: 0;
-    padding: 0.1rem 1rem;
-    /* Padding vertical mais curto */
-    border-bottom: 1px solid #cac6c5;
-    /* Borda inferior */
-    ;
+    padding: 0.5rem 1.4rem;
+    border-top: 1px solid #cac6c5;
+
+    &.active {
+        font-weight: bold;
+    }
+
+}
+
+.side-nav_sub-item {
+    cursor: pointer;
+}
+
+
+.side-nav_sub-item {
+    padding-left: 20px;
+
+    &.active {
+        font-weight: bold;
+        color: #007bff;
+    }
 }
 
 .side-nav_menu-item:hover {
@@ -31,8 +49,13 @@ ul {
 }
 
 /* Remove a borda do primeiro item */
-.side-nav_menu-item:first-child {
-    border-top: none;
+.side-nav_menu-item:last-child {
+    border-bottom: 1px solid #cac6c5;
+}
+
+.side-nav_submenu {
+    list-style: none;
+    padding-left: 0;
 }
 
 .layout__main {
@@ -1338,22 +1361,20 @@ nav {
 
 
 .side-nav__sub-item {
+    cursor: pointer;
     padding-left: 0px;
     font-size: 1.0em;
-    /* Define um tamanho de fonte menor para os subitens */
+    color: #4171ae
+        /* Define um tamanho de fonte menor para os subitens */
 }
 
-.side-nav__sub-item--active .side-nav__link {
-    border-color: #386195;
-    background-color: #e7e6e4
-}
-
-.side-nav__sub-item:hover,
-.side-nav__link:focus {
-    color: #4677b3;
-    transition: background-color .8s ease;
-    transform: translateZ(0);
-    border-left: 5px #2a4970 solid;
+.side-nav__sub-item.active .side-nav__link,
+.side-nav__link.active {
+  color: #4677b3;
+  transition: background-color .8s ease;
+  transform: translateZ(0);
+  border-left: 5px #2a4970 solid;
+  background-color: #e7e6e4;
 }
 
 .side-nav__link {
@@ -1491,7 +1512,7 @@ nav {
     width: 100%;
     max-width: 100%;
     height: 48px;
-    background-color: #373433;
+    background-color: #3a3f85;
     color: #f0f0ef;
 }
 
@@ -1504,7 +1525,7 @@ nav {
 .top-nav__branding-label {
     display: flex;
     cursor: pointer;
-    background-color: #373433;
+    background-color: #3a3f85;
     fill: none
 }
 

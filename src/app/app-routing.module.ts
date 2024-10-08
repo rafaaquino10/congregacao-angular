@@ -8,14 +8,16 @@ import { EditarPessoaComponent } from './components/pessoas/editar-pessoa/editar
 import { ListarPessoasComponent } from './components/pessoas/listar-pessoas/listar-pessoas.component';
 import { NavigationComponent } from './navigation/navigation.component';
 
+
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'home', component: HomeComponent },
-  { path: 'pessoas-home', component: HomePessoasComponent},
+  { path: 'home-pessoas', component: HomePessoasComponent},
   { path: 'cadastrar-pessoa', component: CadastrarPessoaComponent },
   { path: 'editar-pessoa', component: EditarPessoaComponent },
   { path: 'listar-pessoas', component: ListarPessoasComponent },
   { path: 'navigation', component: NavigationComponent },
+
 ];
 
 @NgModule({

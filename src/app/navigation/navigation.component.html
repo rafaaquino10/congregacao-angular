@@ -2,11 +2,13 @@
     <input type="checkbox" id="side-nav__is-collapsed" class="side-nav__is-collapsed sr-only">
     <nav class="top-nav">
         <div class="top-nav__primary-items">
-            <label for="side-nav__is-collapsed" class="top-nav__branding-label top-nav__branding-label--trademarked top-nav__branding-label--has-side-nav">
+            <label for="side-nav__is-collapsed"
+                class="top-nav__branding-label top-nav__branding-label--trademarked top-nav__branding-label--has-side-nav">
                 <div class="top-nav__hamburger">
                     <span class="sr-only">Ocultar menu de navegação</span>
                     <span class="icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24" width="24" class="icon__body--stroke icon__body">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24" width="24"
+                            class="icon__body--stroke icon__body">
                             <g stroke-linecap="square" stroke-linejoin="miter" stroke-width="2">
                                 <line fill="none" stroke-miterlimit="10" x1="1" y1="12" x2="23" y2="12"></line>
                                 <line fill="none" stroke-miterlimit="10" x1="1" y1="5" x2="23" y2="5"></line>
@@ -17,15 +19,18 @@
                 </div>
                 <button class="top-nav__title custom-button"><strong>VILA YARA</strong></button>
             </label>
-            <h1 class="top-nav__name-page">Registrar pessoas</h1>
+            <h1 class="top-nav__name-page"></h1>
         </div>
         <aside class="top-nav__secondary-items">
             <div class="top-nav__aside">
                 <a target="_blank" class="top-nav__secondary-item top-nav__secondary-item--clickable" href="">
                     <span class="icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="icon__body" height="24" width="24">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="icon__body" height="24"
+                            width="24">
                             <g>
-                                <path d="M12,0C5.383,0,0,5.383,0,12s5.383,12,12,12s12-5.383,12-12S18.617,0,12,0z M11.5,19 c-0.828,0-1.5-0.672-1.5-1.5s0.672-1.5,1.5-1.5s1.5,0.672,1.5,1.5S12.328,19,11.5,19z M15.811,10.127 c-0.309,0.495-0.896,1.051-1.762,1.669c-1.401,1.036-1.363,1.266-1.363,2.204h-2.457c0-0.733-0.016-1.296,0.38-1.981 c0.253-0.439,0.717-0.906,1.391-1.4c0.809-0.578,1.595-1.135,1.595-2.105c0-0.909-0.778-1.233-1.687-1.233 c-0.927,0-1.984,0.303-3.171,0.909l-1.011-2.03c2.157-1.209,5.561-1.756,7.422-0.241C16.514,7.032,16.522,8.989,15.811,10.127z"></path>
+                                <path
+                                    d="M12,0C5.383,0,0,5.383,0,12s5.383,12,12,12s12-5.383,12-12S18.617,0,12,0z M11.5,19 c-0.828,0-1.5-0.672-1.5-1.5s0.672-1.5,1.5-1.5s1.5,0.672,1.5,1.5S12.328,19,11.5,19z M15.811,10.127 c-0.309,0.495-0.896,1.051-1.762,1.669c-1.401,1.036-1.363,1.266-1.363,2.204h-2.457c0-0.733-0.016-1.296,0.38-1.981 c0.253-0.439,0.717-0.906,1.391-1.4c0.809-0.578,1.595-1.135,1.595-2.105c0-0.909-0.778-1.233-1.687-1.233 c-0.927,0-1.984,0.303-3.171,0.909l-1.011-2.03c2.157-1.209,5.561-1.756,7.422-0.241C16.514,7.032,16.522,8.989,15.811,10.127z">
+                                </path>
                             </g>
                         </svg>
                     </span>
@@ -37,24 +42,74 @@
     <div class="layout__content">
         <nav class="side-nav">
             <h2 class="sr-only">Menu</h2>
-            <a id="pessoas" class="side-nav_menu-item side-nav__section side-nav__item" (click)="toggleSubMenu('pessoas')">PESSOAS</a>
-            <ul *ngIf="subMenus.pessoas">
-                <li class="side-nav__sub-item"><a class="side-nav__link" href="/cadastrar-pessoa">Registrar pessoa</a></li>
-                <li class="side-nav__sub-item"><a class="side-nav__link" href="/listar-pessoas">Lista de pessoas</a></li>
-                <li class="side-nav__sub-item"><a class="side-nav__link" href="#">Visualizar grupos</a></li>
+            <section class="side-nav__section">
+                <a class="side-nav__context-link" href="">
+                    <span class="icon side-nav__context-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="icon__body" height="32"
+                            width="32">
+                            <g>
+                                <path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"></path>
+                            </g>
+                        </svg>
+                    </span>Página inicial
+                </a>
+            </section>
+            <ul class="side-nav_menu">
+                <li class="side-nav_menu-item" [ngClass]="{'active': isMenuAtivo('pessoas')}"
+                    (click)="toggleMenu('pessoas')">
+                    PESSOAS
+                </li>
+                <ul *ngIf="menuAberto === 'pessoas'" class="side-nav_submenu">
+                    <li class="side-nav__sub-item" routerLink="/cadastrar-pessoa" routerLinkActive="active"
+                        [ngClass]="{'active': subItemAtivo === 'cadastrar-pessoa'}">
+                        <a class="side-nav__link">Registrar pessoa</a>
+                    </li>
+                    <li class="side-nav__sub-item" routerLink="/listar-pessoas" routerLinkActive="active"
+                        [ngClass]="{'active': subItemAtivo === 'listar-pessoas'}">
+                        <a class="side-nav__link">Lista de pessoas</a>
+                    </li>
+                    <li class="side-nav__sub-item" routerLink="/visualizar-grupos" routerLinkActive="active"
+                        [ngClass]="{'active': subItemAtivo === 'visualizar-grupos'}">
+                        <a class="side-nav__link">Visualizar grupos</a>
+                    </li>
+                </ul>
+                <li class="side-nav_menu-item" [ngClass]="{'active': isMenuAtivo('reunioes')}"
+                    (click)="toggleMenu('reunioes')">
+                    REUNIÕES
+                </li>
+                <ul *ngIf="menuAberto === 'reunioes'" class="side-nav_submenu">
+                    <li class="side-nav__sub-item"><a class="side-nav__link" href="#">Programação</a></li>
+                    <li class="side-nav__sub-item"><a class="side-nav__link" href="#">Designações</a></li>
+                    <li class="side-nav__sub-item"><a class="side-nav__link" href="#">Assistência</a></li>
+                    <li class="side-nav__sub-item"><a class="side-nav__link" href="#">Quadro de anúncios</a></li>
+                </ul>
+                <li class="side-nav_menu-item" [ngClass]="{'active': isMenuAtivo('relatorios')}"
+                    (click)="toggleMenu('relatorios')">
+                    RELATÓRIOS
+                </li>
+                <ul *ngIf="menuAberto === 'relatorios'">
+                    <li class="side-nav__sub-item side-nav__link" routerLink="" routerLinkActive="active"
+                        [class.active]="subItemAtivo === ''">Pregação
+                    </li>
+                    <li class="side-nav__sub-item side-nav__link" routerLink="" routerLinkActive="active"
+                        [class.active]="subItemAtivo === ''">Assistência
+                    </li>
+                </ul>
+                <li class="side-nav_menu-item" [ngClass]="{'active': isMenuAtivo('territorios')}"
+                    (click)="toggleMenu('territorios')">
+                    TERRITÓRIOS
+                </li>
+                <ul *ngIf="menuAberto === 'territorios'">
+                    <li class="side-nav__sub-item side-nav__link" routerLink="" routerLinkActive="active"
+                        [class.active]="subItemAtivo === ''">Mapas
+                    </li>
+                    <li class="side-nav__sub-item side-nav__link" routerLink="" routerLinkActive="active"
+                        [class.active]="subItemAtivo === ''">Designações
+                    </li>
+                </ul>
             </ul>
-            <a id="pessoas" class="side-nav_menu-item side-nav__section side-nav__item" (click)="toggleSubMenu('reunioes')">REUNIÕES</a>
-            <ul *ngIf="subMenus.reunioes">
-                <li class="side-nav__sub-item"><a class="side-nav__link" href="#">Programação</a></li>
-                <li class="side-nav__sub-item"><a class="side-nav__link" href="#">Designações</a></li>
-                <li class="side-nav__sub-item"><a class="side-nav__link" href="#">Assistência</a></li>
-                <li class="side-nav__sub-item"><a class="side-nav__link" href="#">Quadro de anúncios</a></li>
-            </ul>
-            <a id="pessoas" class="side-nav_menu-item side-nav__section side-nav__item" (click)="toggleSubMenu('pessoas')">TERRITÓRIOS</a>
-            <a id="pessoas" class="side-nav_menu-item side-nav__section side-nav__item" (click)="toggleSubMenu('pessoas')">RELATÓRIOS</a>
         </nav>
         <main class="layout__content">
-            <!-- Aqui é onde o conteúdo principal será renderizado, como o form-cadastro -->
             <ng-content></ng-content>
         </main>
     </div>
