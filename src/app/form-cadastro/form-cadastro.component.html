@@ -8,7 +8,7 @@
             <label for="nome">Nome</label>
             <input type="text" id="nome" name="nome" [(ngModel)]="form.nome" />
           </div>
-          <div class="form-group width5">  
+          <div class="form-group width5">
             <label for="genero">Gênero</label>
             <select id="genero" name="genero" [(ngModel)]="form.genero" (change)="onGeneroChange()">
               <option value=""></option>
@@ -22,14 +22,15 @@
           </div>
           <div class="form-group width7">
             <label for="telefone">Telefone</label>
-            <input type="tel" id="telefone" name="telefone" [(ngModel)]="form.telefone" (input)="formatarTelefone()" maxlength="15">
+            <input type="tel" id="telefone" name="telefone" [(ngModel)]="form.telefone" (input)="formatarTelefone()"
+              maxlength="15">
           </div>
           <div class="form-group width15">
             <label for="email">Email</label>
             <input type="email" id="email" name="email" [(ngModel)]="form.email" />
           </div>
         </div>
-        
+
         <legend>Endereço</legend>
         <div class="form-row">
           <div class="form-group width5">
@@ -129,10 +130,10 @@
           </div>
         </div>
         <br>
-        <div class="form-row" style="width: 40%">
+        <div class="form-row" style="width: 30%">
           <input type="submit" value="Salvar" class="btnMain width20">
           <input type="button" value="Limpar" class="width20" (click)="limparFormulario(formCadastro)">
-       </div>
+        </div>
       </fieldset>
     </form>
     <app-toast-sucesso #toast></app-toast-sucesso>
