@@ -1,5 +1,163 @@
 <body>
   <app-navigation>
-    <app-form-cadastro></app-form-cadastro>
+    <main class="layout__main">
+      <section class="page page--large">
+        <header class="page__header">
+          <h1 class="page__heading page__heading--title">Registrar pessoa</h1>
+        </header>
+        <aside></aside>
+        <section>
+          <div class="margin-top-1 margin-bottom-2">
+            <form class="form form--gutter margin-top-1 form--edit ng-pristine ng-invalid ng-touched" style="padding-left: 5%;" (ngSubmit)="salvarFormulario()" #formCadastro="ngForm">
+              <div class="sub-form">
+                <div class="field full-width">
+                  <label class="field__label" for="nome">Nome</label>
+                  <input class="field__input" type="text" id="nome" name="nome" [(ngModel)]="form.nome" />
+                </div>
+                <div class="field width10">
+                  <label class="field__label" for="genero">Gênero</label>
+                  <select class="field__input" id="genero" name="genero" [(ngModel)]="form.genero"
+                    (change)="onGeneroChange()">
+                    <option value=""></option>
+                    <option value="feminino">Feminino</option>
+                    <option value="masculino">Masculino</option>
+                  </select>
+                </div>
+                <div class="field width10">
+                  <label class="field__label" for="dataNascimento">Data de Nascimento</label>
+                  <input class="field__input" type="date" id="dataNascimento" name="dataNascimento"
+                    [(ngModel)]="form.dataNascimento" />
+                </div>
+                <div class="field width10">
+                  <label class="field__label" for="telefone">Telefone</label>
+                  <input class="field__input" type="tel" id="telefone" name="telefone" [(ngModel)]="form.telefone"
+                    (input)="formatarTelefone('telefone')" maxlength="15">
+                </div>
+                <div class="field width30">
+                  <label class="field__label" for="email">Email</label>
+                  <input class="field__input" type="email" id="email" name="email" [(ngModel)]="form.email" />
+                </div>
+              </div>
+
+              <div class="sub-form">
+                <div class="field width10">
+                  <label class="field__label" for="cep">CEP</label>
+                  <input class="field__input" type="text" id="cep" name="cep" [(ngModel)]="form.cep" />
+                </div>
+                <div class="field width50">
+                  <label class="field__label" for="logradouro">Logradouro</label>
+                  <input class="field__input" type="text" id="logradouro" name="logradouro"
+                    [(ngModel)]="form.logradouro" />
+                </div>
+                <div class="field width10">
+                  <label class="field__label" for="numero">Número</label>
+                  <input class="field__input" type="text" id="numero" name="numero" [(ngModel)]="form.numero" />
+                </div>
+              </div>
+              <div class="sub-form">
+
+                <div class="field width20">
+                  <label class="field__label" for="complemento">Complemento</label>
+                  <input class="field__input" type="text" id="complemento" name="complemento"
+                    [(ngModel)]="form.complemento" />
+                </div>
+                <div class="field width25">
+                  <label class="field__label" for="bairro">Bairro</label>
+                  <input class="field__input" type="text" id="bairro" name="bairro" [(ngModel)]="form.bairro" />
+                </div>
+                <div class="field width25">
+                  <label class="field__label" for="cidade">Cidade</label>
+                  <input class="field__input" type="text" id="cidade" name="cidade" [(ngModel)]="form.cidade" />
+                </div>
+                <div class="field width7">
+                  <label class="field__label" for="uf">UF</label>
+                  <input class="field__input" type="text" id="uf" name="uf" [(ngModel)]="form.uf" />
+                </div>
+              </div>
+
+              <div class="sub-form">
+                <div class="field width10">
+                  <label class="field__label" for="grupo">Grupo</label>
+                  <select class="field__input field__input--grow" id="grupo" name="grupo" [(ngModel)]="form.grupo">
+                    <option value=""></option>
+                    <option value="servoMinisterial">Servo Ministerial</option>
+                    <option value="anciao">Ancião</option>
+                  </select>
+                </div>
+                <div class="field width7">
+                  <label class="field__label" for="batizado">Batizado?</label>
+                  <select class="field__input field__input--grow" id="batizado" name="batizado"
+                    [(ngModel)]="form.batizado" (change)="onBatizadoChange()">
+                    <option value="0">Não</option>
+                    <option value="1">Sim</option>
+                  </select>
+                </div>
+                <div class="field width10" *ngIf="form.batizado">
+                  <label class="field__label" for="dataBatismo">Data de Batismo</label>
+                  <input class="field__input field__input--grow" type="date" id="dataBatismo" name="dataBatismo"
+                    [(ngModel)]="form.dataBatismo"/>
+                </div>
+                <div class="field width7" *ngIf="form.batizado">
+                  <label class="field__label" for="ungido">Ungido?</label>
+                  <select class="field__input field__input--grow" id="ungido" name="ungido" [(ngModel)]="form.ungido">
+                    <option value="0">Não</option>
+                    <option value="1">Sim</option>
+                  </select>
+                </div>
+                <div class="field width10" *ngIf="form.batizado">
+                  <label class="field__label" for="pioneiro">Pioneiro</label>
+                  <select class="field__input field__input--grow" id="pioneiro" name="pioneiro"
+                    [(ngModel)]="form.pioneiro">
+                    <option value=""></option>
+                    <option value="auxiliar">Auxiliar</option>
+                    <option value="regular">Regular</option>
+                    <option value="especial">Especial</option>
+                  </select>
+                </div>
+                <div class="field" *ngIf="form.genero === 'masculino'">
+                  <label class="field__label" for="privilegio">Privilégio</label>
+                  <select class="field__input field__input--grow" id="privilegio" name="privilegio"
+                    [(ngModel)]="form.privilegio">
+                    <option value=""></option>
+                    <option value="servoMinisterial">Servo Ministerial</option>
+                    <option value="anciao">Ancião</option>
+                  </select>
+                </div>
+              </div>
+
+              <legend><strong>Contatos de Emergência</strong></legend>
+              <div class="sub-form">
+                <div class="field width25">
+                  <label class="field__label" for="emergNome">Nome</label>
+                  <input class="field__input field__input--grow" type="text" id="emergNome" name="emergNome"
+                    [(ngModel)]="form.emergNome" />
+                </div>
+                <div class="field width10">
+                  <label class="field__label" for="emergParentesco">Parentesco</label>
+                  <input class="field__input field__input--grow" type="text" id="emergParentesco" name="emergParentesco"
+                    [(ngModel)]="form.emergParentesco" />
+                </div>
+                <div class="field width10">
+                  <label class="field__label" for="emergTelefone">Telefone</label>
+                  <input class="field__input field__input--grow" type="tel" id="emergTelefone" name="emergTelefone"
+                    [(ngModel)]="form.emergTelefone" (input)="formatarTelefone('emergTelefone')" maxlength="15">
+                </div>
+                <div class="field width30">
+                  <label class="field__label" for="emergEmail">Email</label>
+                  <input class="field__input field__input--grow" type="email" id="emergEmail" name="emergEmail"
+                    [(ngModel)]="form.emergEmail" />
+                </div>
+              </div>
+
+              <div class="buttons margin-top-2">
+                <a class="button" (click)="limparFormulario(formCadastro)">Limpar</a>
+                <button class="button button--primary" type="submit">Salvar</button>
+              </div>
+            </form>
+            <app-toast-sucesso #toast></app-toast-sucesso>
+          </div>
+        </section>
+      </section>
+    </main>
   </app-navigation>
 </body>

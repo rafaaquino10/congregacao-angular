@@ -1,20 +1,29 @@
+// pessoa.service.ts
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Pessoa } from '../../../models/pessoa.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PessoaService {
-  private apiUrl = 'http://localhost:8080/gerenciador-registros';
+  private baseUrl  = 'api/pessoas';
 
   constructor(private http: HttpClient) {}
 
-  cadastrarPessoa(dados: any): Observable<any> {
-    const headers = new HttpHeaders({
-      'Content-Type': 'application/json',
-    });
+  criarPessoa(pessoa: Pessoa): Observable<Pessoa> {
+    return this.http.post<Pessoa>(this.baseUrl, pessoa);
+  }
 
-    return this.http.post(`${this.apiUrl}/api/pessoas/cadastrar-pessoa`, dados, { headers });
+  buscarPessoas(nome?: string, grupoId?: number): Observable<Pessoa[]> {
+    let params = {};
+    if (nome) {
+      params = { ...params, nome };
+    }
+    if (grupoId) {
+      params = { ...params, grupoId: grupoId.toString() };
+    }
+    return this.http.get<Pessoa[]>(`${this.baseUrl}/buscar`, { params });
   }
 }

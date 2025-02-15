@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
-    const gridItems = document.querySelectorAll(".grid__item.ng-star-inserted");
+    const gridItems = document.querySelectorAll(".grid__item");
     const detailsSection = document.getElementById("details-section");
   
     gridItems.forEach(gridItem => {

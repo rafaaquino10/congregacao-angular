@@ -10,15 +10,11 @@ import { ListarPessoasComponent } from './components/pessoas/listar-pessoas/list
 import { EditarPessoaComponent } from './components/pessoas/editar-pessoa/editar-pessoa.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomePessoasComponent } from './components/pessoas/home-pessoas/home-pessoas.component';
-import { TopNavComponent } from './menu/top-nav/top-nav.component';
-import { SideNavComponent } from './menu/side-nav/side-nav.component';
-import { HomeTopNavComponent } from './menu/home-top-nav/home-top-nav.component';
-import { CardPessoaComponent } from './components/pessoas/listar-pessoas/card-pessoa/card-pessoa.component';
 import { HttpClientModule } from '@angular/common/http';
-import { ConfirmacaoModalComponent } from './components/pessoas/confirmacao-modal/confirmacao-modal.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { FormCadastroComponent } from './form-cadastro/form-cadastro.component';
 import { ToastSucessoComponent } from './toast-sucesso/toast-sucesso.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 @NgModule({
@@ -30,11 +26,6 @@ import { ToastSucessoComponent } from './toast-sucesso/toast-sucesso.component';
     ListarPessoasComponent,
     EditarPessoaComponent,
     HomePessoasComponent,
-    TopNavComponent,
-    SideNavComponent,
-    HomeTopNavComponent,
-    CardPessoaComponent,
-    ConfirmacaoModalComponent,
     NavigationComponent,
     FormCadastroComponent,
     ToastSucessoComponent
@@ -44,7 +35,8 @@ import { ToastSucessoComponent } from './toast-sucesso/toast-sucesso.component';
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    HttpClientModule 
+    HttpClientModule ,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

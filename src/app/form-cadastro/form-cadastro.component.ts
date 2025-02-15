@@ -13,7 +13,6 @@ export class FormCadastroComponent {
 
   form = {
     nome: '',
-    nomeCompleto: '',
     genero: '',
     dataNascimento: '',
     batizado: false,
@@ -51,8 +50,8 @@ export class FormCadastroComponent {
     }
   }
 
-  formatarTelefone(): void {
-    const telefoneInput = document.getElementById('telefone') as HTMLInputElement;
+  formatarTelefone(id: string): void {
+    const telefoneInput = document.getElementById(id) as HTMLInputElement;
     let valor = telefoneInput.value;
   
     valor = valor.replace(/\D/g, '');

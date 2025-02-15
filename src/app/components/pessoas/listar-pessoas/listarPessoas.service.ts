@@ -7,9 +7,10 @@ import { Pessoa } from './../../../models/pessoa.model'; // Importe o modelo cor
   providedIn: 'root'
 })
 export class ListarPessoasService {
+  private baseUrl = '/api/pessoas';
+
   constructor(private http: HttpClient) {}
 
-  // Método para buscar pessoas com filtros
   buscarPessoas(nome?: string, grupoId?: number): Observable<Pessoa[]> {
     let params = new HttpParams();
     if (nome) {
@@ -18,6 +19,6 @@ export class ListarPessoasService {
     if (grupoId) {
       params = params.set('grupoId', grupoId.toString());
     }
-    return this.http.get<Pessoa[]>('/api/pessoas/buscar', { params });
+    return this.http.get<Pessoa[]>(`${this.baseUrl}/buscar`, { params });
   }
 }

@@ -63,12 +63,11 @@ export class NavigationComponent implements OnInit {
     } else if (url.includes('quadro-anuncios')) {
       this.subItemAtivo = 'quadro-anuncios';
     } else {
-      this.subItemAtivo = ''; // Limpa se nenhuma das condições for atendida
+      this.subItemAtivo = '';
     }
   }
 
   isMenuAtivo(menu: string): boolean {
-    // Verifica se o menu principal está ativo
     return this.menuAberto === menu;
   }
 }
